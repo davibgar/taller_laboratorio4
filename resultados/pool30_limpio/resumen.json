@@ -1,0 +1,166 @@
+{
+  "corrida": "pool30_limpio",
+  "generado": "2026-10-19 17:40:07",
+  "criterios": {
+    "max_error_pct": 1.0,
+    "max_p95_ms": 500.0,
+    "crecimiento_min_pct": 10.0,
+    "segundos_descartados": 15
+  },
+  "inicio_prueba_ts": 1792448491.77,
+  "fin_prueba_ts": 1792448936.735,
+  "linea_base": {
+    "desde": "2026-10-19 17:19:31",
+    "hasta": "2026-10-19 17:21:26",
+    "cpu_pct": {
+      "api": 1.26,
+      "consumer": 0.0,
+      "grafana": 0.36,
+      "jaeger": 36.1,
+      "k6": 0.0,
+      "monitor-contenedores": 0.89,
+      "mysql": 4.37,
+      "mysqld-exporter": 0.0,
+      "otel-collector": 0.51,
+      "prometheus": 0.04,
+      "rabbitmq": 22.15
+    },
+    "memoria_mb": {
+      "api": 48.7,
+      "consumer": 34.0,
+      "grafana": 62.9,
+      "jaeger": 1023.7,
+      "k6": 0.0,
+      "monitor-contenedores": 26.1,
+      "mysql": 439.7,
+      "mysqld-exporter": 7.9,
+      "otel-collector": 48.7,
+      "prometheus": 43.5,
+      "rabbitmq": 128.3
+    },
+    "conexiones_bd": 3.0
+  },
+  "escalones": [
+    {
+      "numero": 1,
+      "usuarios": 400,
+      "desde": "2026-10-19 17:23:01",
+      "hasta": "2026-10-19 17:25:41",
+      "desde_ts": 1792448581.764,
+      "hasta_ts": 1792448741.749,
+      "medicion": {
+        "ventana_s": 159,
+        "pet_s": 350.74328335096914,
+        "pet_s_por_operacion": {
+          "GET /pagos": 69.87637752600202,
+          "GET /pagos/{pago_id}": 175.89103672542393,
+          "PUT /pagos/{pago_id}": 34.847859189098514,
+          "POST /pagos": 70.12800991044469
+        },
+        "p50_ms": 37.678058892314226,
+        "p95_ms": 627.3911353032651,
+        "p99_ms": 1088.3899999999928,
+        "p95_ms_por_operacion": {
+          "GET /pagos": 429.2763157894718,
+          "GET /pagos/{pago_id}": 425.67278287461744,
+          "PUT /pagos/{pago_id}": 441.9736842105252,
+          "POST /pagos": 960.3817114093953
+        },
+        "error_apm_pct": 0.0,
+        "k6_pet_s": 356.0655459800866,
+        "error_k6_pct": 0.0,
+        "cpu_api_pct": 94.12832065258841,
+        "cpu_api_max_pct": 103.95898989898991,
+        "cpu_bd_pct": 27.690857888172996,
+        "cpu_bd_max_pct": 34.29926751592357,
+        "cpu_k6_pct": 30.84433077246456,
+        "cpu_collector_pct": 1.8266005410830741,
+        "mem_api_mb": 69.41455078125,
+        "mem_bd_mb": 530.6612548828125,
+        "conexiones_bd_max": 32.0,
+        "max_connections": 151.0,
+        "pool_en_uso_prom": 18.78125,
+        "pool_en_uso_max": 30.0,
+        "pool_maximo": 30.0,
+        "pool_en_espera_prom": 25.750000000000007,
+        "pool_en_espera_max": 203.0,
+        "tiempo_ms": {
+          "total": 118.5943626455483,
+          "aplicacion": 1.3114179785501072,
+          "espera_pool": 52.94342015399805,
+          "consultas_bd": 32.96219371652861,
+          "publicacion_cola": 31.37733079647153
+        }
+      },
+      "criterios": {
+        "error_pct": 0.0,
+        "cumple_error": true,
+        "cumple_p95": false,
+        "crecimiento_pct": null,
+        "cumple_crecimiento": true,
+        "cumple_todo": false
+      }
+    },
+    {
+      "numero": 2,
+      "usuarios": 600,
+      "desde": "2026-10-19 17:26:11",
+      "hasta": "2026-10-19 17:28:51",
+      "desde_ts": 1792448771.747,
+      "hasta_ts": 1792448931.737,
+      "medicion": {
+        "ventana_s": 159,
+        "pet_s": 405.4584166720433,
+        "pet_s_por_operacion": {
+          "GET /pagos": 81.41170398090199,
+          "GET /pagos/{pago_id}": 204.08413446028774,
+          "PUT /pagos/{pago_id}": 39.428350216142974,
+          "POST /pagos": 80.53422801471062
+        },
+        "p50_ms": 96.41155922515082,
+        "p95_ms": 1970.890968266882,
+        "p99_ms": 3293.5334242837707,
+        "p95_ms_por_operacion": {
+          "GET /pagos/{pago_id}": 888.9857142857132,
+          "PUT /pagos/{pago_id}": 938.0306603773583,
+          "POST /pagos": 3277.115117891814,
+          "GET /pagos": 947.1662468513861
+        },
+        "error_apm_pct": 0.0,
+        "k6_pet_s": 405.60118188798884,
+        "error_k6_pct": 0.0,
+        "cpu_api_pct": 100.24820797266379,
+        "cpu_api_max_pct": 103.36577740016992,
+        "cpu_bd_pct": 27.501549576332057,
+        "cpu_bd_max_pct": 41.8075020746888,
+        "cpu_k6_pct": 32.581074467244974,
+        "cpu_collector_pct": 1.588739335696008,
+        "mem_api_mb": 76.3927001953125,
+        "mem_bd_mb": 541.1132812499998,
+        "conexiones_bd_max": 32.0,
+        "max_connections": 151.0,
+        "pool_en_uso_prom": 26.874999999999996,
+        "pool_en_uso_max": 30.0,
+        "pool_maximo": 30.0,
+        "pool_en_espera_prom": 72.0625,
+        "pool_en_espera_max": 260.0,
+        "tiempo_ms": {
+          "total": 441.57516500478914,
+          "aplicacion": 1.285798214302389,
+          "espera_pool": 147.62905792164065,
+          "consultas_bd": 55.90781170556173,
+          "publicacion_cola": 236.7524971632844
+        }
+      },
+      "criterios": {
+        "error_pct": 0.0,
+        "cumple_error": true,
+        "cumple_p95": false,
+        "crecimiento_pct": 15.599766529619853,
+        "cumple_crecimiento": true,
+        "cumple_todo": false
+      }
+    }
+  ],
+  "punto_saturacion": null
+}

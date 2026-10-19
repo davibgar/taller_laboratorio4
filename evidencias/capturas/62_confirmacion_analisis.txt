@@ -1,0 +1,16 @@
+2026-10-19 17:17:12
+docker compose run --rm analisis --corrida confirmacion
+Calentamiento descartado: 5 usuarios, 2026-10-19 17:09:09 → 2026-10-19 17:09:54
+Escalón 1: 200 usuarios, ventana 2026-10-19 17:10:24 → 2026-10-19 17:13:05
+Escalón 2: 400 usuarios, ventana 2026-10-19 17:13:34 → 2026-10-19 17:16:14
+
+| Esc. | Usuarios | Pet./s | p50 (ms) | p95 (ms) | p99 (ms) | Error % | CPU app | CPU BD | Memoria app / BD (MB) | Conex. BD (activas / máx.) | Pool app (en uso / tamaño; en espera) | Cumple |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | 200 | 185.4 | 19 | 312 | 943 | 0.00 | 74 % | 24 % | 60 / 471 | 12 / 151 | 10 / 10; 5 prom. (65 máx.) | ✅ **← punto de saturación** |
+| 2 | 400 | 157.7 | 405 | 7 239 | 16 824 | 2.97 | 105 % | 43 % | 69 / 477 | 12 / 151 | 10 / 10; 250 prom. (428 máx.) | ❌ error, p95, throughput |
+
+Escalón 1 (200 u): 71.2 ms/petición = app 1.7 + espera pool 39.3 + MySQL 21.6 + RabbitMQ 8.6 | CPU k6 24 % | crecimiento – %
+Escalón 2 (400 u): 1610.0 ms/petición = app 0.5 + espera pool 1521.1 + MySQL 58.0 + RabbitMQ 30.4 | CPU k6 37 % | crecimiento -14.9 %
+
+PUNTO DE SATURACIÓN: escalón 1 → 200 usuarios concurrentes, 185.4 peticiones/s (p95 312 ms, error 0.00 %)
+Resultados en resultados/confirmacion/

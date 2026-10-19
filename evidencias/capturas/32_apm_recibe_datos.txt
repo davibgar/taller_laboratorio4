@@ -1,0 +1,24 @@
+2026-10-19 16:17:01
+docker compose exec -T api python - < evidencias/verificar_apm.py
+CRUD de la API:
+  POST /pagos    -> 201 {"status":true,"message":"Pago registrado","data":{"id":1,"estado":"REGISTRADO"}}
+  PUT  /pagos/1  -> 200 {"status":true,"message":"Pago actualizado","data":{"id":1,"referencia":"VERIFICACION-1-B","valor":130000,"med
+  GET  /pagos/1  -> 200 {"status":true,"message":"Pago encontrado","data":{"id":1,"referencia":"VERIFICACION-1-B","valor":130000,"medi
+  GET  /pagos    -> 200 {"status":true,"message":"Pagos encontrados","data":[{"id":1,"referencia":"VERIFICACION-1-B","valor":130000,"m
+
+Servicios que reporta Jaeger (http://localhost:16686):
+   ['pagos-api']
+
+Peticiones por operación que registra el APM (spanmetrics en Prometheus):
+   GET /pagos             41179 peticiones
+   GET /pagos/{pago_id}   103891 peticiones
+   PUT /pagos/{pago_id}   20480 peticiones
+   POST /pagos            41712 peticiones
+
+Spans de base de datos registrados por la API:
+   COMMIT pagos_db        207262 spans
+   INSERT pagos_db        41712 spans
+   SELECT pagos_db        145070 spans
+   UPDATE pagos_db        20480 spans
+   pool.acquire           207262 spans
+   ,pagos.registrados send 41712 spans

@@ -1,0 +1,293 @@
+# Taller de Laboratorio N.º 4 - Monitoreo con APM y prueba de estrés sobre el CRUD
+# Autores: David Felipe Garcia Ortiz - Juan David Claros Cachaya
+#
+# Un único comando levanta la aplicación, la base de datos y el APM:
+#     docker compose up -d --build
+#
+# Servicios con perfil (no arrancan con el comando anterior):
+#     docker compose run --rm -e CORRIDA=corrida1 k6          # prueba de estrés
+#     docker compose run --rm analisis --corrida corrida1     # tabla y gráficas
+#     docker compose run --rm captura apm --corrida corrida1   # capturas del APM
+#
+# Todos los contenedores tienen límites de CPU y memoria: sin ellos los resultados
+# dependerían de lo que el equipo esté haciendo y no serían comparables.
+
+name: lab04-pagos
+
+x-zona-horaria: &zona
+  TZ: America/Bogota
+
+x-otel: &otel
+  OTEL_EXPORTER_OTLP_ENDPOINT: http://otel-collector:4318
+  OTEL_EXPORTER_OTLP_PROTOCOL: http/protobuf
+  OTEL_RESOURCE_ATTRIBUTES: deployment.environment=laboratorio04
+
+services:
+  # -------------------------------------------------------------------------
+  # Aplicación: CRUD de pagos (API + consumidor), MySQL y RabbitMQ
+  # -------------------------------------------------------------------------
+  mysql:
+    image: mysql:8.4
+    container_name: lab04-mysql
+    # max_connections explícito: es uno de los límites que se vigilan en la prueba.
+    command: ["--default-time-zone=-05:00", "--max-connections=151"]
+    environment:
+      <<: *zona
+      MYSQL_ROOT_PASSWORD: root_pass
+      MYSQL_DATABASE: pagos_db
+      MYSQL_USER: pagos_user
+      MYSQL_PASSWORD: pagos_pass
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/01_init.sql:ro
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "${MYSQL_HOST_PORT:-3307}:3306"
+    cpus: 1.0
+    mem_limit: 1g
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -proot_pass --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
+    restart: unless-stopped
+
+  rabbitmq:
+    image: rabbitmq:4-management-alpine
+    container_name: lab04-rabbitmq
+    hostname: lab04-rabbitmq
+    environment:
+      <<: *zona
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    ports:
+      - "${RABBIT_UI_PORT:-15672}:15672"
+    cpus: 0.5
+    mem_limit: 512m
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 5s
+      timeout: 10s
+      retries: 30
+      start_period: 15s
+    restart: unless-stopped
+
+  api:
+    build: ./api
+    image: lab04-pagos-api
+    container_name: lab04-api
+    environment:
+      <<: [*zona, *otel]
+      OTEL_SERVICE_NAME: pagos-api
+      # Cola de spans amplia y envío cada segundo: a cientos de peticiones por segundo
+      # la cola por defecto (2048) se llenaría y se perderían spans (y métricas).
+      OTEL_BSP_MAX_QUEUE_SIZE: "20000"
+      OTEL_BSP_MAX_EXPORT_BATCH_SIZE: "2048"
+      OTEL_BSP_SCHEDULE_DELAY: "1000"
+      DB_HOST: mysql
+      DB_USER: pagos_user
+      DB_PASSWORD: pagos_pass
+      DB_NAME: pagos_db
+      DB_POOL_MAX: ${DB_POOL_MAX:-10}
+      RABBIT_URL: amqp://guest:guest@rabbitmq:5672/
+    ports:
+      - "${API_HOST_PORT:-8090}:8000"
+    cpus: 1.0
+    mem_limit: 512m
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request;urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 10s
+    depends_on:
+      mysql:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+      otel-collector:
+        condition: service_started
+    restart: unless-stopped
+
+  consumer:
+    build: ./consumer
+    image: lab04-pagos-consumer
+    container_name: lab04-consumer
+    environment:
+      <<: [*zona, *otel]
+      OTEL_SERVICE_NAME: pagos-consumidor
+      OTEL_TRACES_EXPORTER: otlp
+      OTEL_METRICS_EXPORTER: none
+      OTEL_LOGS_EXPORTER: none
+      DB_HOST: mysql
+      DB_USER: pagos_user
+      DB_PASSWORD: pagos_pass
+      DB_NAME: pagos_db
+      RABBIT_HOST: rabbitmq
+      # En el Lab. 3 la acción tardaba 5 s. Aquí se deja en 1 s: la prueba de estrés
+      # mide el CRUD de la API y el consumidor sólo debe seguir funcionando.
+      PROCESS_SECONDS: ${PROCESS_SECONDS:-1}
+    volumes:
+      - ./comprobantes:/app/comprobantes
+    cpus: 0.5
+    mem_limit: 256m
+    depends_on:
+      mysql:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # -------------------------------------------------------------------------
+  # APM: OpenTelemetry Collector + Jaeger (trazas) + Prometheus (métricas) + Grafana
+  # -------------------------------------------------------------------------
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:0.111.0
+    container_name: lab04-otel-collector
+    command: ["--config=/etc/otelcol/config.yml"]
+    volumes:
+      - ./observabilidad/otel-collector.yml:/etc/otelcol/config.yml:ro
+    cpus: 1.0
+    mem_limit: 512m
+    depends_on:
+      - jaeger
+    restart: unless-stopped
+
+  jaeger:
+    image: jaegertracing/all-in-one:1.62.0
+    container_name: lab04-jaeger
+    environment:
+      <<: *zona
+      SPAN_STORAGE_TYPE: memory
+      OTEL_TRACES_SAMPLER: always_off   # Jaeger no se traza a sí mismo
+      # Con 20 % de muestreo, 100 000 trazas alcanzan para toda la prueba (~25 000 trazas)
+      MEMORY_MAX_TRACES: "100000"
+      # Pestaña "Monitor" de Jaeger (Service Performance Monitoring) a partir de spanmetrics
+      METRICS_STORAGE_TYPE: prometheus
+      PROMETHEUS_SERVER_URL: http://prometheus:9090
+      PROMETHEUS_QUERY_NAMESPACE: traces_span_metrics
+      PROMETHEUS_QUERY_NORMALIZE_CALLS: "true"
+      PROMETHEUS_QUERY_NORMALIZE_DURATION: "true"
+    ports:
+      - "${JAEGER_UI_PORT:-16686}:16686"
+    cpus: 1.0
+    mem_limit: 1g
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:v2.54.1
+    container_name: lab04-prometheus
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.retention.time=30d
+      - --web.enable-remote-write-receiver   # k6 envía aquí sus métricas
+    volumes:
+      - ./observabilidad/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    ports:
+      - "${PROMETHEUS_PORT:-9090}:9090"
+    cpus: 0.5
+    mem_limit: 512m
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:11.2.2
+    container_name: lab04-grafana
+    environment:
+      <<: *zona
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Admin
+      GF_AUTH_DISABLE_LOGIN_FORM: "true"
+      GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH: /var/lib/grafana/tableros/apm-pagos.json
+      GF_ANALYTICS_REPORTING_ENABLED: "false"
+      GF_ANALYTICS_CHECK_FOR_UPDATES: "false"
+    volumes:
+      - ./observabilidad/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./observabilidad/grafana/tableros:/var/lib/grafana/tableros:ro
+    ports:
+      - "${GRAFANA_PORT:-3030}:3000"
+    cpus: 0.5
+    mem_limit: 256m
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+  mysqld-exporter:
+    image: prom/mysqld-exporter:v0.15.1
+    container_name: lab04-mysqld-exporter
+    command: ["--mysqld.address=mysql:3306", "--mysqld.username=exporter"]
+    environment:
+      MYSQLD_EXPORTER_PASSWORD: exporter_pass
+    cpus: 0.25
+    mem_limit: 64m
+    depends_on:
+      mysql:
+        condition: service_healthy
+    restart: unless-stopped
+
+  monitor-contenedores:
+    build: ./monitor-contenedores
+    image: lab04-monitor-contenedores
+    container_name: lab04-monitor-contenedores
+    environment:
+      PROYECTO: lab04-pagos
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    cpus: 0.25
+    mem_limit: 128m
+    restart: unless-stopped
+
+  # -------------------------------------------------------------------------
+  # Herramientas de la prueba (perfiles: sólo corren cuando se invocan)
+  # -------------------------------------------------------------------------
+  k6:
+    image: grafana/k6:0.54.0
+    profiles: ["prueba"]
+    environment:
+      <<: *zona
+      BASE_URL: http://api:8000
+      K6_PROMETHEUS_RW_SERVER_URL: http://prometheus:9090/api/v1/write
+      K6_PROMETHEUS_RW_TREND_STATS: p(50),p(95),p(99),avg,max
+      K6_PROMETHEUS_RW_PUSH_INTERVAL: 5s
+    volumes:
+      - ./carga:/carga:ro
+      - ./resultados:/resultados
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - >-
+        mkdir -p /resultados/$${CORRIDA:=corrida} &&
+        k6 run -o experimental-prometheus-rw
+        --summary-export=/resultados/$${CORRIDA}/k6_resumen.json /carga/escenario.js
+    cpus: 2.0
+    mem_limit: 1g
+    depends_on:
+      api:
+        condition: service_healthy
+
+  analisis:
+    build: ./analisis
+    image: lab04-analisis
+    profiles: ["prueba"]
+    environment:
+      <<: *zona
+      PROMETHEUS_URL: http://prometheus:9090
+    volumes:
+      - ./resultados:/resultados
+
+  captura:
+    build: ./evidencias/herramientas_captura
+    entrypoint: ["python", "captura.py"]
+    image: lab04-captura
+    profiles: ["prueba"]
+    environment:
+      <<: *zona
+    volumes:
+      - ./evidencias:/ev
+      - ./resultados:/resultados:ro
+
+volumes:
+  mysql_data:
+  rabbitmq_data:
+  prometheus_data:

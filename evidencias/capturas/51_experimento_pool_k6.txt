@@ -1,0 +1,510 @@
+2026-10-19 17:21:24
+$env:DB_POOL_MAX=30; docker compose run --rm -e CORRIDA=pool30_limpio -e ESCALONES=400,600 k6
+ Container lab04-jaeger  Running
+ Container lab04-mysql  Running
+ Container lab04-rabbitmq  Running
+ Container lab04-otel-collector  Running
+ Container lab04-api  Running
+ Container lab04-mysql  Waiting
+ Container lab04-rabbitmq  Waiting
+ Container lab04-rabbitmq  Healthy
+ Container lab04-mysql  Healthy
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+     execution: local
+        script: /carga/escenario.js
+        output: Prometheus remote write (http://prometheus:9090/api/v1/write)
+
+     scenarios: (100.00%) 1 scenario, 600 max VUs, 7m30s max duration (incl. graceful stop):
+              * escalones: Up to 600 looping VUs for 7m20s over 6 stages (gracefulRampDown: 10s, gracefulStop: 10s)
+
+
+Run         [ 100% ] setup()
+
+Run         [ 100% ] setup()
+
+Run         [ 100% ] setup()
+
+Run         [ 100% ] setup()
+
+Run         [ 100% ] setup()
+
+Run         [ 100% ] setup()
+
+Run         [ 100% ] setup()
+time="2026-10-19T22:21:35Z" level=info msg="Corrida pool30_limpio: escalones 400, 600 usuarios de 3m; ids 1..300" source=console
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+escalones ↓ [ 100% ] 600/600 VUs  7m20s
+
+escalones ↓ [ 100% ] 600/600 VUs  7m20s
+
+     ✓ listar: 200
+     ✓ crear: 201
+     ✓ consultar: 200
+     ✓ actualizar: 200
+
+     checks.........................: 100.00% 141142 out of 141142
+     data_received..................: 546 MB  1.2 MB/s
+     data_sent......................: 21 MB   46 kB/s
+     http_req_blocked...............: avg=9.68µs   min=1.62µs   med=5.11µs  p(90)=8.11µs   p(95)=9.51µs   p(99)=36.24µs  max=50.09ms
+     http_req_connecting............: avg=2.72µs   min=0s       med=0s      p(90)=0s       p(95)=0s       p(99)=0s       max=49.98ms
+     http_req_duration..............: avg=329.44ms min=1.21ms   med=92.26ms p(90)=1.03s    p(95)=1.5s     p(99)=2.63s    max=6.27s  
+       { expected_response:true }...: avg=329.44ms min=1.21ms   med=92.26ms p(90)=1.03s    p(95)=1.5s     p(99)=2.63s    max=6.27s  
+     http_req_failed................: 0.00%   0 out of 141443
+     http_req_receiving.............: avg=137.24µs min=10.65µs  med=70.73µs p(90)=167.45µs p(95)=225.16µs p(99)=928.22µs max=67.98ms
+     http_req_sending...............: avg=27.36µs  min=3.74µs   med=18.26µs p(90)=52.62µs  p(95)=72.42µs  p(99)=120.59µs max=10.28ms
+     http_req_tls_handshaking.......: avg=0s       min=0s       med=0s      p(90)=0s       p(95)=0s       p(99)=0s       max=0s     
+     http_req_waiting...............: avg=329.28ms min=1.15ms   med=92.04ms p(90)=1.03s    p(95)=1.5s     p(99)=2.63s    max=6.27s  
+     http_reqs......................: 141443  315.022935/s
+     iteration_duration.............: avg=1.33s    min=502.99ms med=1.22s   p(90)=2.07s    p(95)=2.57s    p(99)=3.68s    max=6.96s  
+     iterations.....................: 141142  314.352546/s
+     vus............................: 43      min=0                max=600
+     vus_max........................: 600     min=600              max=600
+
+
+escalones ✓ [ 100% ] 000/600 VUs  7m20s

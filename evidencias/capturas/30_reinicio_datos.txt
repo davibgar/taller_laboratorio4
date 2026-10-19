@@ -1,0 +1,168 @@
+2026-10-19 16:15:44
+docker compose up -d --build
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.71kB 0.0s done
+#1 DONE 0.0s
+
+#2 [api internal] load build definition from Dockerfile
+#2 transferring dockerfile: 512B 0.0s done
+#2 DONE 0.1s
+
+#3 [consumer internal] load build definition from Dockerfile
+#3 transferring dockerfile: 324B 0.0s done
+#3 DONE 0.1s
+
+#4 [monitor-contenedores internal] load build definition from Dockerfile
+#4 transferring dockerfile: 267B done
+#4 DONE 0.1s
+
+#5 [consumer internal] load metadata for docker.io/library/python:3.12-slim
+#5 DONE 0.1s
+
+#6 [consumer internal] load .dockerignore
+#6 transferring context: 2B done
+#6 DONE 0.0s
+
+#7 [monitor-contenedores internal] load .dockerignore
+#7 transferring context: 2B done
+#7 DONE 0.1s
+
+#8 [api internal] load .dockerignore
+#8 transferring context: 2B done
+#8 DONE 0.1s
+
+#9 [monitor-contenedores 1/5] FROM docker.io/library/python:3.12-slim@sha256:f77ac9e44ae96ef2c90b8053ea08c31f8be030f824196b0ae4db6d462c84e51f
+#9 resolve docker.io/library/python:3.12-slim@sha256:f77ac9e44ae96ef2c90b8053ea08c31f8be030f824196b0ae4db6d462c84e51f 0.1s done
+#9 DONE 0.1s
+
+#10 [consumer internal] load build context
+#10 transferring context: 111B done
+#10 DONE 0.1s
+
+#11 [api internal] load build context
+#11 transferring context: 98B done
+#11 DONE 0.1s
+
+#12 [monitor-contenedores internal] load build context
+#12 transferring context: 67B done
+#12 DONE 0.1s
+
+#13 [consumer 3/5] COPY requirements.txt .
+#13 CACHED
+
+#14 [consumer 4/5] RUN pip install -r requirements.txt
+#14 CACHED
+
+#15 [consumer 5/5] COPY consumer.py reprocesar_fallidos.py ./
+#15 CACHED
+
+#16 [monitor-contenedores 4/5] RUN pip install -r requirements.txt
+#16 CACHED
+
+#17 [monitor-contenedores 3/5] COPY requirements.txt .
+#17 CACHED
+
+#18 [monitor-contenedores 5/5] COPY monitor.py .
+#18 CACHED
+
+#19 [api 2/5] WORKDIR /app
+#19 CACHED
+
+#20 [api 3/5] COPY requirements.txt .
+#20 CACHED
+
+#21 [api 4/5] RUN pip install -r requirements.txt
+#21 CACHED
+
+#22 [api 5/5] COPY telemetria.py app.py ./
+#22 CACHED
+
+#23 [api] exporting to image
+#23 exporting layers done
+#23 exporting manifest sha256:1a05d9c716cf677f3c96e2f4f920dfa98a04564befc556eff9d24028b112c950 0.0s done
+#23 exporting config sha256:1a1edd0b0e4c43da426030f350ff77deb7ae29b87f8abe074685afa399e53b08 0.0s done
+#23 exporting attestation manifest sha256:960824cfc28c5478bd05f79edad9a4afaf666e0d1be55804e2335e7589b62e11
+#23 exporting attestation manifest sha256:960824cfc28c5478bd05f79edad9a4afaf666e0d1be55804e2335e7589b62e11 0.2s done
+#23 exporting manifest list sha256:0473d79c3d1229a87e161c79d7cc562e11b2fd7f027cb9934f027dbfd2bc8266
+#23 exporting manifest list sha256:0473d79c3d1229a87e161c79d7cc562e11b2fd7f027cb9934f027dbfd2bc8266 0.1s done
+#23 naming to docker.io/library/lab04-pagos-api:latest 0.0s done
+#23 unpacking to docker.io/library/lab04-pagos-api:latest
+#23 unpacking to docker.io/library/lab04-pagos-api:latest 0.0s done
+#23 DONE 0.6s
+
+#24 [consumer] exporting to image
+#24 exporting layers done
+#24 exporting manifest sha256:6ba7dbc8826b38ea20a8607bb9c1dfab4c8b4db57aa63534734ba884e2afb2c8 0.0s done
+#24 exporting config sha256:8b6131d622c08885a61d1ab70058858cc4148f5b5d5adb5f847baa28b4a69730 0.0s done
+#24 exporting attestation manifest sha256:10552f9cc94ab5ebb5adc4894139b0ce75dfa2e98c55b93462bc46923cc87cef 0.2s done
+#24 exporting manifest list sha256:8f67b3ba96c70971df6d1e38cc1894cd56bb20365ded5d7c7f5dabfe8c6041c0 0.1s done
+#24 naming to docker.io/library/lab04-pagos-consumer:latest 0.0s done
+#24 unpacking to docker.io/library/lab04-pagos-consumer:latest 0.0s done
+#24 DONE 0.5s
+
+#25 [monitor-contenedores] exporting to image
+#25 exporting layers done
+#25 exporting manifest sha256:d3a64b4de84eeee571fa38610351156f34aa5a2ce5cc7af041cda6bcd3b00322 0.0s done
+#25 exporting config sha256:09de4e34643db9f84e5da48859b60b53e7828ef0b05c7eacb879023ca17a7b3d 0.0s done
+#25 exporting attestation manifest sha256:add8292e3542ed698ae8ac9102f8f3080864176c355d570e3bcd8e9137665349 0.2s done
+#25 exporting manifest list sha256:b374bff8e5c711bf035438702e05830bc61cf12406891783808f7c46ea867075 0.1s done
+#25 naming to docker.io/library/lab04-monitor-contenedores:latest 0.0s done
+#25 unpacking to docker.io/library/lab04-monitor-contenedores:latest 0.0s done
+#25 DONE 0.6s
+
+#26 [consumer] resolving provenance for metadata file
+#26 DONE 0.3s
+
+#27 [api] resolving provenance for metadata file
+#27 DONE 0.0s
+
+#28 [monitor-contenedores] resolving provenance for metadata file
+#28 DONE 0.2s
+ lab04-pagos-consumer  Built
+ lab04-pagos-api  Built
+ lab04-monitor-contenedores  Built
+ Volume "lab04-pagos_mysql_data"  Creating
+ Volume "lab04-pagos_mysql_data"  Created
+ Volume "lab04-pagos_rabbitmq_data"  Creating
+ Volume "lab04-pagos_rabbitmq_data"  Created
+ Container lab04-prometheus  Running
+ Container lab04-grafana  Running
+ Container lab04-jaeger  Creating
+ Container lab04-mysql  Creating
+ Container lab04-rabbitmq  Creating
+ Container lab04-monitor-contenedores  Recreate
+ Container lab04-mysql  Created
+ Container lab04-mysqld-exporter  Creating
+ Container lab04-jaeger  Created
+ Container lab04-otel-collector  Running
+ Container lab04-rabbitmq  Created
+ Container lab04-api  Creating
+ Container lab04-consumer  Creating
+ Container lab04-mysqld-exporter  Created
+ Container lab04-consumer  Created
+ Container lab04-api  Created
+ Container lab04-monitor-contenedores  Recreated
+ Container lab04-monitor-contenedores  Starting
+ Container lab04-mysql  Starting
+ Container lab04-jaeger  Starting
+ Container lab04-rabbitmq  Starting
+ Container lab04-rabbitmq  Started
+ Container lab04-jaeger  Started
+ Container lab04-mysql  Started
+ Container lab04-mysql  Waiting
+ Container lab04-rabbitmq  Waiting
+ Container lab04-mysql  Waiting
+ Container lab04-mysql  Waiting
+ Container lab04-rabbitmq  Waiting
+ Container lab04-monitor-contenedores  Started
+ Container lab04-rabbitmq  Healthy
+ Container lab04-rabbitmq  Healthy
+ Container lab04-mysql  Healthy
+ Container lab04-mysql  Healthy
+ Container lab04-mysqld-exporter  Starting
+ Container lab04-api  Starting
+ Container lab04-mysql  Healthy
+ Container lab04-consumer  Starting
+ Container lab04-mysqld-exporter  Started
+ Container lab04-api  Started
+ Container lab04-consumer  Started

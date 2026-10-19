@@ -1,0 +1,34 @@
+2026-10-19 16:46:03
+docker compose run --rm analisis --corrida corrida2
+Calentamiento descartado: 5 usuarios, 2026-10-19 16:19:42 → 2026-10-19 16:20:27
+Escalón 1: 10 usuarios, ventana 2026-10-19 16:20:57 → 2026-10-19 16:23:37
+Escalón 2: 25 usuarios, ventana 2026-10-19 16:24:07 → 2026-10-19 16:26:47
+Escalón 3: 50 usuarios, ventana 2026-10-19 16:27:17 → 2026-10-19 16:29:57
+Escalón 4: 100 usuarios, ventana 2026-10-19 16:30:27 → 2026-10-19 16:33:07
+Escalón 5: 200 usuarios, ventana 2026-10-19 16:33:37 → 2026-10-19 16:36:17
+Escalón 6: 400 usuarios, ventana 2026-10-19 16:36:47 → 2026-10-19 16:39:27
+Escalón 7: 600 usuarios, ventana 2026-10-19 16:39:57 → 2026-10-19 16:42:37
+Escalón 8: 800 usuarios, ventana 2026-10-19 16:43:07 → 2026-10-19 16:45:47
+
+| Esc. | Usuarios | Pet./s | p50 (ms) | p95 (ms) | p99 (ms) | Error % | CPU app | CPU BD | Memoria app / BD (MB) | Conex. BD (activas / máx.) | Pool app (en uso / tamaño; en espera) | Cumple |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | 10 | 9.8 | 4 | 32 | 70 | 0.00 | 7 % | 5 % | 50 / 460 | 5 / 151 | 1 / 10; 0 prom. (0 máx.) | ✅ |
+| 2 | 25 | 23.9 | 7 | 162 | 413 | 0.00 | 26 % | 16 % | 52 / 477 | 12 / 151 | 4 / 10; 0 prom. (2 máx.) | ✅ |
+| 3 | 50 | 47.3 | 7 | 141 | 693 | 0.00 | 31 % | 12 % | 52 / 481 | 12 / 151 | 6 / 10; 0 prom. (0 máx.) | ✅ |
+| 4 | 100 | 98.7 | 4 | 38 | 76 | 0.00 | 32 % | 11 % | 53 / 485 | 13 / 151 | 4 / 10; 0 prom. (0 máx.) | ✅ |
+| 5 | 200 | 194.6 | 8 | 85 | 197 | 0.00 | 56 % | 19 % | 58 / 488 | 12 / 151 | 10 / 10; 2 prom. (15 máx.) | ✅ |
+| 6 | 400 | 377.7 | 18 | 247 | 568 | 0.00 | 83 % | 23 % | 67 / 492 | 12 / 151 | 10 / 10; 44 prom. (104 máx.) | ✅ **← punto de saturación** |
+| 7 | 600 | 426.6 | 252 | 1 343 | 1 985 | 0.00 | 99 % | 25 % | 77 / 496 | 12 / 151 | 10 / 10; 202 prom. (348 máx.) | ❌ p95 |
+| 8 | 800 | 357.8 | 1 041 | 4 225 | 6 527 | 0.03 | 100 % | 28 % | 88 / 501 | 12 / 151 | 10 / 10; 484 prom. (626 máx.) | ❌ p95, throughput |
+
+Escalón 1 (10 u): 9.1 ms/petición = app 1.4 + espera pool 0.0 + MySQL 5.5 + RabbitMQ 2.2 | CPU k6 3 % | crecimiento – %
+Escalón 2 (25 u): 34.2 ms/petición = app 2.4 + espera pool 0.5 + MySQL 22.3 + RabbitMQ 9.0 | CPU k6 17 % | crecimiento 144.4 %
+Escalón 3 (50 u): 49.4 ms/petición = app 2.1 + espera pool 16.5 + MySQL 23.3 + RabbitMQ 7.5 | CPU k6 10 % | crecimiento 97.7 %
+Escalón 4 (100 u): 9.7 ms/petición = app 1.2 + espera pool 0.1 + MySQL 6.4 + RabbitMQ 2.0 | CPU k6 11 % | crecimiento 108.5 %
+Escalón 5 (200 u): 20.5 ms/petición = app 1.2 + espera pool 4.0 + MySQL 11.6 + RabbitMQ 3.7 | CPU k6 21 % | crecimiento 97.2 %
+Escalón 6 (400 u): 53.0 ms/petición = app 0.9 + espera pool 32.0 + MySQL 14.6 + RabbitMQ 5.5 | CPU k6 27 % | crecimiento 94.1 %
+Escalón 7 (600 u): 378.4 ms/petición = app 0.8 + espera pool 347.7 + MySQL 20.7 + RabbitMQ 9.1 | CPU k6 33 % | crecimiento 12.9 %
+Escalón 8 (800 u): 1198.7 ms/petición = app 1.2 + espera pool 1161.3 + MySQL 24.7 + RabbitMQ 11.5 | CPU k6 37 % | crecimiento -16.1 %
+
+PUNTO DE SATURACIÓN: escalón 6 → 400 usuarios concurrentes, 377.7 peticiones/s (p95 247 ms, error 0.00 %)
+Resultados en resultados/corrida2/

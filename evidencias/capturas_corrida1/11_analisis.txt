@@ -1,0 +1,74 @@
+2026-10-19 16:08:48
+docker compose run --rm --build analisis --corrida corrida1
+#1 [internal] load local bake definitions
+#1 reading from stdin 610B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 292B 0.0s done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.12-slim
+#3 DONE 0.1s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 34B done
+#5 DONE 0.0s
+
+#6 [1/4] FROM docker.io/library/python:3.12-slim@sha256:f77ac9e44ae96ef2c90b8053ea08c31f8be030f824196b0ae4db6d462c84e51f
+#6 resolve docker.io/library/python:3.12-slim@sha256:f77ac9e44ae96ef2c90b8053ea08c31f8be030f824196b0ae4db6d462c84e51f 0.0s done
+#6 DONE 0.1s
+
+#7 [2/4] WORKDIR /app
+#7 CACHED
+
+#8 [3/4] RUN pip install requests==2.32.3 matplotlib==3.9.2 tzdata==2024.2
+#8 CACHED
+
+#9 [4/4] COPY analizar.py .
+#9 CACHED
+
+#10 exporting to image
+#10 exporting layers done
+#10 exporting manifest sha256:70089fba1fc20a6270961f4c63792995b2a6c62a1903e3f989e0e9546dff3c3f done
+#10 exporting config sha256:a303ac94a42a9865b09604b1c039e1ed1af3da0d7078d5d45bb625cc1cae0957 done
+#10 exporting attestation manifest sha256:29ec8659216e21127df779f146fae32f8a320f371c2157279a0b7944d2e82f9b 0.1s done
+#10 exporting manifest list sha256:7f9cb5f58e35bc157f72e2766d02376932a3e694eee0f04b932a4563dbfb0a26
+#10 exporting manifest list sha256:7f9cb5f58e35bc157f72e2766d02376932a3e694eee0f04b932a4563dbfb0a26 0.0s done
+#10 naming to docker.io/library/lab04-analisis:latest done
+#10 unpacking to docker.io/library/lab04-analisis:latest 0.0s done
+#10 DONE 0.2s
+
+#11 resolving provenance for metadata file
+#11 DONE 0.0s
+Calentamiento descartado: 5 usuarios, 2026-10-19 15:48:50 → 2026-10-19 15:49:35
+Escalón 1: 10 usuarios, ventana 2026-10-19 15:50:05 → 2026-10-19 15:52:45
+Escalón 2: 25 usuarios, ventana 2026-10-19 15:53:15 → 2026-10-19 15:55:55
+Escalón 3: 50 usuarios, ventana 2026-10-19 15:56:25 → 2026-10-19 15:59:05
+Escalón 4: 100 usuarios, ventana 2026-10-19 15:59:35 → 2026-10-19 16:02:15
+Escalón 5: 200 usuarios, ventana 2026-10-19 16:02:45 → 2026-10-19 16:05:25
+Escalón 6: 400 usuarios, ventana 2026-10-19 16:05:55 → 2026-10-19 16:08:35
+
+| Esc. | Usuarios | Pet./s | p50 (ms) | p95 (ms) | p99 (ms) | Error % | CPU app | CPU BD | Memoria app / BD (MB) | Conex. BD (activas / máx.) | Pool app (en uso / tamaño; en espera) | Cumple |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | 10 | 9.9 | 4 | 26 | 90 | 0.00 | 6 % | 3 % | 50 / 448 | 5 / 151 | 2 / 10; 0 prom. (0 máx.) | ✅ |
+| 2 | 25 | 24.7 | 4 | 26 | 79 | 0.00 | 10 % | 6 % | 51 / 458 | 8 / 151 | 3 / 10; 0 prom. (0 máx.) | ✅ |
+| 3 | 50 | 47.8 | 7 | 175 | 397 | 0.00 | 31 % | 20 % | 53 / 469 | 13 / 151 | 6 / 10; 0 prom. (0 máx.) | ✅ |
+| 4 | 100 | 99.0 | 4 | 34 | 74 | 0.00 | 30 % | 11 % | 54 / 480 | 13 / 151 | 2 / 10; 0 prom. (0 máx.) | ✅ |
+| 5 | 200 | 190.6 | 5 | 47 | 90 | 0.00 | 52 % | 16 % | 61 / 484 | 12 / 151 | 7 / 10; 0 prom. (1 máx.) | ✅ |
+| 6 | 400 | 376.4 | 17 | 244 | 527 | 0.00 | 89 % | 26 % | 71 / 489 | 12 / 151 | 10 / 10; 17 prom. (167 máx.) | ✅ **← punto de saturación** |
+
+Escalón 1 (10 u): 9.6 ms/petición = app 1.2 + espera pool 0.0 + MySQL 6.5 + RabbitMQ 1.8 | CPU k6 3 % | crecimiento – %
+Escalón 2 (25 u): 8.6 ms/petición = app 1.1 + espera pool 0.0 + MySQL 5.6 + RabbitMQ 1.9 | CPU k6 4 % | crecimiento 149.8 %
+Escalón 3 (50 u): 33.0 ms/petición = app 2.0 + espera pool 0.9 + MySQL 22.9 + RabbitMQ 7.2 | CPU k6 20 % | crecimiento 93.4 %
+Escalón 4 (100 u): 9.1 ms/petición = app 1.1 + espera pool 0.0 + MySQL 5.9 + RabbitMQ 2.0 | CPU k6 12 % | crecimiento 107.0 %
+Escalón 5 (200 u): 11.9 ms/petición = app 1.0 + espera pool 0.5 + MySQL 7.9 + RabbitMQ 2.5 | CPU k6 18 % | crecimiento 92.6 %
+Escalón 6 (400 u): 52.7 ms/petición = app 0.9 + espera pool 31.8 + MySQL 14.5 + RabbitMQ 5.5 | CPU k6 29 % | crecimiento 97.5 %
+
+PUNTO DE SATURACIÓN: escalón 6 → 400 usuarios concurrentes, 376.4 peticiones/s (p95 244 ms, error 0.00 %)
+ATENCIÓN: el último escalón todavía cumple los criterios; el sistema no saturó. Agregue escalones mayores (ver CRITERIOS_SATURACION.md).
+Resultados en resultados/corrida1/

@@ -1,0 +1,13 @@
+2026-10-19 15:48:26
+docker stats --no-stream
+NAME                         CPU %     MEM USAGE / LIMIT
+lab04-api                    0.14%     48.49MiB / 512MiB
+lab04-consumer               0.00%     33.36MiB / 256MiB
+lab04-grafana                0.52%     64.09MiB / 256MiB
+lab04-otel-collector         0.06%     42.5MiB / 512MiB
+lab04-mysqld-exporter        0.00%     7.992MiB / 64MiB
+lab04-rabbitmq               42.60%    164.5MiB / 512MiB
+lab04-prometheus             0.00%     26.62MiB / 512MiB
+lab04-mysql                  0.53%     440.6MiB / 1GiB
+lab04-monitor-contenedores   0.45%     24.46MiB / 128MiB
+lab04-jaeger                 0.01%     9.066MiB / 1GiB

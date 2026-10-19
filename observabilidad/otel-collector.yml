@@ -1,0 +1,64 @@
+# =====================================================================
+# OpenTelemetry Collector - Taller de Laboratorio N.º 4
+# Recibe trazas y métricas de la API y del consumidor (OTLP) y:
+#   1. Calcula con el conector spanmetrics, a partir del 100 % de los spans, las
+#      peticiones por segundo, la tasa de error y el histograma de latencia de cada
+#      operación. Prometheus las lee de :8889.
+#   2. Envía las trazas a Jaeger para verlas una a una. Se guarda un 20 % de las
+#      trazas (muestreo por traza completa) para que Jaeger no sea el cuello de botella.
+#      Las métricas no se ven afectadas: se calculan antes del muestreo.
+# =====================================================================
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+      http:
+        endpoint: 0.0.0.0:4318
+
+connectors:
+  spanmetrics:
+    histogram:
+      explicit:
+        buckets: [2ms, 5ms, 10ms, 25ms, 50ms, 75ms, 100ms, 150ms, 200ms, 300ms, 400ms, 500ms,
+                  750ms, 1s, 1500ms, 2s, 3s, 5s, 7500ms, 10s, 20s, 30s]
+    dimensions:
+      - name: http.status_code
+    metrics_flush_interval: 5s
+
+processors:
+  memory_limiter:
+    check_interval: 1s
+    limit_percentage: 80
+    spike_limit_percentage: 20
+  batch:
+    send_batch_size: 2048
+    timeout: 1s
+  probabilistic_sampler:
+    sampling_percentage: 20
+
+exporters:
+  otlp/jaeger:
+    endpoint: jaeger:4317
+    tls:
+      insecure: true
+  prometheus:
+    endpoint: 0.0.0.0:8889
+
+service:
+  telemetry:
+    metrics:
+      address: 0.0.0.0:8888   # métricas propias del collector (spans recibidos/rechazados)
+  pipelines:
+    traces/metricas:
+      receivers: [otlp]
+      processors: [memory_limiter, batch]
+      exporters: [spanmetrics]
+    traces/jaeger:
+      receivers: [otlp]
+      processors: [memory_limiter, probabilistic_sampler, batch]
+      exporters: [otlp/jaeger]
+    metrics:
+      receivers: [otlp, spanmetrics]
+      processors: [memory_limiter, batch]
+      exporters: [prometheus]

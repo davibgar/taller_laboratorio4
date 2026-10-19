@@ -1,0 +1,13 @@
+2026-10-19 16:17:00
+docker compose ps
+NAME                         IMAGE                                          STATUS                        PORTS
+lab04-api                    lab04-pagos-api                                Up 40 seconds (healthy)       0.0.0.0:8090->8000/tcp, [::]:8090->8000/tcp
+lab04-consumer               lab04-pagos-consumer                           Up 40 seconds                 
+lab04-grafana                grafana/grafana:11.2.2                         Up 31 minutes                 0.0.0.0:3030->3000/tcp, [::]:3030->3000/tcp
+lab04-jaeger                 jaegertracing/all-in-one:1.62.0                Up About a minute             0.0.0.0:16686->16686/tcp, [::]:16686->16686/tcp
+lab04-monitor-contenedores   lab04-monitor-contenedores                     Up About a minute             9200/tcp
+lab04-mysql                  mysql:8.4                                      Up About a minute (healthy)   0.0.0.0:3307->3306/tcp, [::]:3307->3306/tcp
+lab04-mysqld-exporter        prom/mysqld-exporter:v0.15.1                   Up 40 seconds                 9104/tcp
+lab04-otel-collector         otel/opentelemetry-collector-contrib:0.111.0   Up 31 minutes                 4317/tcp, 55678-55679/tcp
+lab04-prometheus             prom/prometheus:v2.54.1                        Up 31 minutes                 0.0.0.0:9090->9090/tcp, [::]:9090->9090/tcp
+lab04-rabbitmq               rabbitmq:4-management-alpine                   Up About a minute (healthy)   0.0.0.0:15672->15672/tcp, [::]:15672->15672/tcp

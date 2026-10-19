@@ -1,0 +1,11 @@
+fastapi==0.115.0
+uvicorn==0.30.6
+aiomysql==0.2.0
+aio-pika==9.4.3
+cryptography==43.0.1
+# Instrumentación (Laboratorio 4)
+opentelemetry-api==1.28.2
+opentelemetry-sdk==1.28.2
+opentelemetry-exporter-otlp-proto-http==1.28.2
+opentelemetry-instrumentation-fastapi==0.49b2
+opentelemetry-instrumentation-aio-pika==0.49b2

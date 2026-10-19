@@ -1,0 +1,16 @@
+2026-10-19 17:29:07
+docker compose run --rm analisis --corrida pool30_limpio
+Calentamiento descartado: 5 usuarios, 2026-10-19 17:21:46 → 2026-10-19 17:22:31
+Escalón 1: 400 usuarios, ventana 2026-10-19 17:23:01 → 2026-10-19 17:25:41
+Escalón 2: 600 usuarios, ventana 2026-10-19 17:26:11 → 2026-10-19 17:28:51
+
+| Esc. | Usuarios | Pet./s | p50 (ms) | p95 (ms) | p99 (ms) | Error % | CPU app | CPU BD | Memoria app / BD (MB) | Conex. BD (activas / máx.) | Pool app (en uso / tamaño; en espera) | Cumple |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | 400 | 350.7 | 38 | 627 | 1 088 | 0.00 | 94 % | 28 % | 69 / 531 | 32 / 151 | 30 / 30; 26 prom. (203 máx.) | ❌ p95 |
+| 2 | 600 | 405.5 | 96 | 1 971 | 3 294 | 0.00 | 100 % | 28 % | 76 / 541 | 32 / 151 | 30 / 30; 72 prom. (260 máx.) | ❌ p95 |
+
+Escalón 1 (400 u): 118.6 ms/petición = app 1.3 + espera pool 52.9 + MySQL 33.0 + RabbitMQ 31.4 | CPU k6 31 % | crecimiento – %
+Escalón 2 (600 u): 441.6 ms/petición = app 1.3 + espera pool 147.6 + MySQL 55.9 + RabbitMQ 236.8 | CPU k6 33 % | crecimiento 15.6 %
+
+Ningún escalón cumple los tres criterios (el sistema ya estaba saturado en el primero).
+Resultados en resultados/pool30_limpio/

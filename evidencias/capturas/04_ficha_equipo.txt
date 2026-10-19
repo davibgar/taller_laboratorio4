@@ -1,0 +1,21 @@
+2026-10-19 17:30:37
+docker info; docker inspect (límites de recursos)
+Sistema operativo (Docker): Docker Desktop
+Kernel: 6.6.87.2-microsoft-standard-WSL2
+Docker Engine: 28.3.3
+CPU disponibles para Docker: 12
+Memoria disponible para Docker: 6213021696 bytes
+Procesador:  12th Gen Intel(R) Core(TM) i5-12450H
+
+CONTENEDOR                   CPU (núcleos)  MEMORIA (MB)
+lab04-api                              1.00           512
+lab04-consumer                         0.50           256
+lab04-grafana                          0.50           256
+lab04-jaeger                           1.00          1024
+lab04-monitor-contenedores             0.25           128
+lab04-mysql                            1.00          1024
+lab04-mysqld-exporter                  0.25            64
+lab04-otel-collector                   1.00           512
+lab04-prometheus                       0.50           512
+lab04-rabbitmq                         0.50           512
+k6 (generador de carga)                2.00          1024

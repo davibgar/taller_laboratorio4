@@ -1,0 +1,410 @@
+{
+  "corrida": "corrida1",
+  "generado": "2026-10-19 17:39:27",
+  "criterios": {
+    "max_error_pct": 1.0,
+    "max_p95_ms": 500.0,
+    "crecimiento_min_pct": 10.0,
+    "segundos_descartados": 15
+  },
+  "inicio_prueba_ts": 1792442915.226,
+  "fin_prueba_ts": 1792444117.157,
+  "linea_base": {
+    "desde": "2026-10-19 15:46:35",
+    "hasta": "2026-10-19 15:48:30",
+    "cpu_pct": {
+      "api": 0.84,
+      "consumer": 0.0,
+      "grafana": 0.09,
+      "jaeger": 0.02,
+      "monitor-contenedores": 0.85,
+      "mysql": 0.74,
+      "mysqld-exporter": 0.0,
+      "otel-collector": 0.1,
+      "prometheus": 0.0,
+      "rabbitmq": 16.78
+    },
+    "memoria_mb": {
+      "api": 48.8,
+      "consumer": 33.4,
+      "grafana": 63.2,
+      "jaeger": 9.0,
+      "monitor-contenedores": 24.5,
+      "mysql": 440.5,
+      "mysqld-exporter": 7.9,
+      "otel-collector": 40.8,
+      "prometheus": 25.7,
+      "rabbitmq": 121.2
+    },
+    "conexiones_bd": 3.0
+  },
+  "escalones": [
+    {
+      "numero": 1,
+      "usuarios": 10,
+      "desde": "2026-10-19 15:50:05",
+      "hasta": "2026-10-19 15:52:45",
+      "desde_ts": 1792443005.223,
+      "hasta_ts": 1792443165.213,
+      "medicion": {
+        "ventana_s": 159,
+        "pet_s": 9.893861005920318,
+        "pet_s_por_operacion": {
+          "GET /pagos": 2.1067790282148384,
+          "GET /pagos/{pago_id}": 4.806923035895249,
+          "PUT /pagos/{pago_id}": 1.0067203584191158,
+          "POST /pagos": 1.9734385833911146
+        },
+        "p50_ms": 3.939226519337017,
+        "p95_ms": 25.55555555555561,
+        "p99_ms": 89.91666666666654,
+        "p95_ms_por_operacion": {
+          "GET /pagos": 9.822784810126581,
+          "GET /pagos/{pago_id}": 4.764420062695926,
+          "PUT /pagos/{pago_id}": 24.819767441860463,
+          "POST /pagos": 87.91666666666664
+        },
+        "error_apm_pct": 0.0,
+        "k6_pet_s": 9.907796872711552,
+        "error_k6_pct": 0.0,
+        "cpu_api_pct": 5.9564978876764725,
+        "cpu_api_max_pct": 18.07859424920128,
+        "cpu_bd_pct": 3.1278098413069313,
+        "cpu_bd_max_pct": 7.650023715415019,
+        "cpu_k6_pct": 2.6229856603789043,
+        "cpu_collector_pct": 0.30761685725980886,
+        "mem_api_mb": 50.31741431451612,
+        "mem_bd_mb": 448.3446320564516,
+        "conexiones_bd_max": 5.0,
+        "max_connections": 151.0,
+        "pool_en_uso_prom": 0.0967741935483871,
+        "pool_en_uso_max": 2.0,
+        "pool_maximo": 10.0,
+        "pool_en_espera_prom": 0.0,
+        "pool_en_espera_max": 0.0,
+        "tiempo_ms": {
+          "total": 9.560305737196764,
+          "aplicacion": 1.2050650835579655,
+          "espera_pool": 0.039059931266846544,
+          "consultas_bd": 6.522399612533678,
+          "publicacion_cola": 1.7937811098382734
+        }
+      },
+      "criterios": {
+        "error_pct": 0.0,
+        "cumple_error": true,
+        "cumple_p95": true,
+        "crecimiento_pct": null,
+        "cumple_crecimiento": true,
+        "cumple_todo": true
+      }
+    },
+    {
+      "numero": 2,
+      "usuarios": 25,
+      "desde": "2026-10-19 15:53:15",
+      "hasta": "2026-10-19 15:55:55",
+      "desde_ts": 1792443195.214,
+      "hasta_ts": 1792443355.204,
+      "medicion": {
+        "ventana_s": 159,
+        "pet_s": 24.714816222306673,
+        "pet_s_por_operacion": {
+          "GET /pagos": 4.75361855044636,
+          "GET /pagos/{pago_id}": 12.57408777860005,
+          "PUT /pagos/{pago_id}": 2.433479342093859,
+          "POST /pagos": 4.953630551166404
+        },
+        "p50_ms": 3.9395604395604398,
+        "p95_ms": 26.306179775280967,
+        "p99_ms": 79.49242424242416,
+        "p95_ms_por_operacion": {
+          "GET /pagos": 9.371010638297868,
+          "GET /pagos/{pago_id}": 4.889788732394366,
+          "PUT /pagos/{pago_id}": 24.739238410596023,
+          "POST /pagos": 77.9166666666666
+        },
+        "error_apm_pct": 0.0,
+        "k6_pet_s": 24.753639473739483,
+        "error_k6_pct": 0.0,
+        "cpu_api_pct": 9.504677029417953,
+        "cpu_api_max_pct": 17.337530266343826,
+        "cpu_bd_pct": 5.9645361528637375,
+        "cpu_bd_max_pct": 10.233009708737864,
+        "cpu_k6_pct": 3.7213215024267203,
+        "cpu_collector_pct": 0.3890967681490503,
+        "mem_api_mb": 50.975806451612904,
+        "mem_bd_mb": 457.66834677419354,
+        "conexiones_bd_max": 8.0,
+        "max_connections": 151.0,
+        "pool_en_uso_prom": 0.22580645161290322,
+        "pool_en_uso_max": 3.0,
+        "pool_maximo": 10.0,
+        "pool_en_espera_prom": 0.0,
+        "pool_en_espera_max": 0.0,
+        "tiempo_ms": {
+          "total": 8.617484386565957,
+          "aplicacion": 1.108895449419997,
+          "espera_pool": 0.0412209522524951,
+          "consultas_bd": 5.604258100890228,
+          "publicacion_cola": 1.8631098840032367
+        }
+      },
+      "criterios": {
+        "error_pct": 0.0,
+        "cumple_error": true,
+        "cumple_p95": true,
+        "crecimiento_pct": 149.79950908465108,
+        "cumple_crecimiento": true,
+        "cumple_todo": true
+      }
+    },
+    {
+      "numero": 3,
+      "usuarios": 50,
+      "desde": "2026-10-19 15:56:25",
+      "hasta": "2026-10-19 15:59:05",
+      "desde_ts": 1792443385.203,
+      "hasta_ts": 1792443545.193,
+      "medicion": {
+        "ventana_s": 159,
+        "pet_s": 47.79588244706385,
+        "pet_s_por_operacion": {
+          "GET /pagos": 9.807189716784897,
+          "GET /pagos/{pago_id}": 24.087951357405732,
+          "PUT /pagos/{pago_id}": 4.660248546589152,
+          "POST /pagos": 9.24049282628407
+        },
+        "p50_ms": 6.623051224944321,
+        "p95_ms": 175.38321167883217,
+        "p99_ms": 396.98214285714266,
+        "p95_ms_por_operacion": {
+          "PUT /pagos/{pago_id}": 250.12499999999983,
+          "POST /pagos": 379.75609756097595,
+          "GET /pagos": 42.685643564356425,
+          "GET /pagos/{pago_id}": 23.309766763848387
+        },
+        "error_apm_pct": 0.0,
+        "k6_pet_s": 47.96273042287334,
+        "error_k6_pct": 0.0,
+        "cpu_api_pct": 31.327847410205532,
+        "cpu_api_max_pct": 93.98608208955224,
+        "cpu_bd_pct": 20.465085965084572,
+        "cpu_bd_max_pct": 61.8170865279299,
+        "cpu_k6_pct": 19.912981616346887,
+        "cpu_collector_pct": 2.993868616385727,
+        "mem_api_mb": 52.597278225806456,
+        "mem_bd_mb": 468.9388860887097,
+        "conexiones_bd_max": 13.0,
+        "max_connections": 151.0,
+        "pool_en_uso_prom": 0.967741935483871,
+        "pool_en_uso_max": 6.0,
+        "pool_maximo": 10.0,
+        "pool_en_espera_prom": 0.0,
+        "pool_en_espera_max": 0.0,
+        "tiempo_ms": {
+          "total": 32.99443034649181,
+          "aplicacion": 2.025309012972458,
+          "espera_pool": 0.8606461122890218,
+          "consultas_bd": 22.867796466592296,
+          "publicacion_cola": 7.240678754638036
+        }
+      },
+      "criterios": {
+        "error_pct": 0.0,
+        "cumple_error": true,
+        "cumple_p95": true,
+        "crecimiento_pct": 93.38959277360546,
+        "cumple_crecimiento": true,
+        "cumple_todo": true
+      }
+    },
+    {
+      "numero": 4,
+      "usuarios": 100,
+      "desde": "2026-10-19 15:59:35",
+      "hasta": "2026-10-19 16:02:15",
+      "desde_ts": 1792443575.194,
+      "hasta_ts": 1792443735.181,
+      "medicion": {
+        "ventana_s": 159,
+        "pet_s": 98.95993066204416,
+        "pet_s_por_operacion": {
+          "GET /pagos": 19.90132675511701,
+          "GET /pagos/{pago_id}": 49.33662244149611,
+          "PUT /pagos/{pago_id}": 9.687312487499169,
+          "POST /pagos": 20.034668977931865
+        },
+        "p50_ms": 4.178182172051382,
+        "p95_ms": 34.41089527027027,
+        "p99_ms": 74.19935344827579,
+        "p95_ms_por_operacion": {
+          "GET /pagos/{pago_id}": 8.074534161490682,
+          "PUT /pagos/{pago_id}": 28.44999999999993,
+          "POST /pagos": 73.54074889867834,
+          "GET /pagos": 12.541118421052598
+        },
+        "error_apm_pct": 0.0,
+        "k6_pet_s": 98.98597141827634,
+        "error_k6_pct": 0.0,
+        "cpu_api_pct": 30.217666050938732,
+        "cpu_api_max_pct": 47.18693679092382,
+        "cpu_bd_pct": 10.616984206429319,
+        "cpu_bd_max_pct": 17.079769736842103,
+        "cpu_k6_pct": 11.848921788214192,
+        "cpu_collector_pct": 0.5604693862503776,
+        "mem_api_mb": 54.14831149193548,
+        "mem_bd_mb": 480.06338205645164,
+        "conexiones_bd_max": 13.0,
+        "max_connections": 151.0,
+        "pool_en_uso_prom": 0.7096774193548387,
+        "pool_en_uso_max": 2.0,
+        "pool_maximo": 10.0,
+        "pool_en_espera_prom": 0.0,
+        "pool_en_espera_max": 0.0,
+        "tiempo_ms": {
+          "total": 9.089008607896018,
+          "aplicacion": 1.0677227054503673,
+          "espera_pool": 0.04726912814121287,
+          "consultas_bd": 5.92738232426062,
+          "publicacion_cola": 2.046634450043818
+        }
+      },
+      "criterios": {
+        "error_pct": 0.0,
+        "cumple_error": true,
+        "cumple_p95": true,
+        "crecimiento_pct": 107.04697893515589,
+        "cumple_crecimiento": true,
+        "cumple_todo": true
+      }
+    },
+    {
+      "numero": 5,
+      "usuarios": 200,
+      "desde": "2026-10-19 16:02:45",
+      "hasta": "2026-10-19 16:05:25",
+      "desde_ts": 1792443765.18,
+      "hasta_ts": 1792443925.169,
+      "medicion": {
+        "ventana_s": 159,
+        "pet_s": 190.62604173611578,
+        "pet_s_por_operacion": {
+          "GET /pagos": 37.42916194412962,
+          "GET /pagos/{pago_id}": 96.09973998266554,
+          "PUT /pagos/{pago_id}": 18.967931195413033,
+          "POST /pagos": 38.1292086139076
+        },
+        "p50_ms": 4.674664449459556,
+        "p95_ms": 47.38730004847311,
+        "p99_ms": 90.22000000000008,
+        "p95_ms_por_operacion": {
+          "GET /pagos": 21.630319148936145,
+          "GET /pagos/{pago_id}": 18.140677966101705,
+          "PUT /pagos/{pago_id}": 43.73421717171718,
+          "POST /pagos": 85.9073208722741
+        },
+        "error_apm_pct": 0.0,
+        "k6_pet_s": 196.96102236793178,
+        "error_k6_pct": 0.0,
+        "cpu_api_pct": 52.02868803135097,
+        "cpu_api_max_pct": 79.69583061889251,
+        "cpu_bd_pct": 16.450111725898065,
+        "cpu_bd_max_pct": 21.804492875104778,
+        "cpu_k6_pct": 17.88948493084312,
+        "cpu_collector_pct": 1.0626169546208262,
+        "mem_api_mb": 60.771421370967744,
+        "mem_bd_mb": 484.1699848790323,
+        "conexiones_bd_max": 12.0,
+        "max_connections": 151.0,
+        "pool_en_uso_prom": 1.6129032258064515,
+        "pool_en_uso_max": 7.0,
+        "pool_maximo": 10.0,
+        "pool_en_espera_prom": 0.03225806451612903,
+        "pool_en_espera_max": 1.0,
+        "tiempo_ms": {
+          "total": 11.88361149045185,
+          "aplicacion": 0.9646326405286931,
+          "espera_pool": 0.5242344366606095,
+          "consultas_bd": 7.936501228525553,
+          "publicacion_cola": 2.458243184736994
+        }
+      },
+      "criterios": {
+        "error_pct": 0.0,
+        "cumple_error": true,
+        "cumple_p95": true,
+        "crecimiento_pct": 92.62952233376002,
+        "cumple_crecimiento": true,
+        "cumple_todo": true
+      }
+    },
+    {
+      "numero": 6,
+      "usuarios": 400,
+      "desde": "2026-10-19 16:05:55",
+      "hasta": "2026-10-19 16:08:35",
+      "desde_ts": 1792443955.169,
+      "hasta_ts": 1792444115.158,
+      "medicion": {
+        "ventana_s": 159,
+        "pet_s": 376.4250950063337,
+        "pet_s_por_operacion": {
+          "GET /pagos": 74.99833322221481,
+          "GET /pagos/{pago_id}": 188.16587772518167,
+          "PUT /pagos/{pago_id}": 37.08247216481099,
+          "POST /pagos": 76.17841189412627
+        },
+        "p50_ms": 17.48980285520054,
+        "p95_ms": 244.44444444444386,
+        "p99_ms": 526.7241379310309,
+        "p95_ms_por_operacion": {
+          "GET /pagos": 222.4999999999996,
+          "GET /pagos/{pago_id}": 207.73972602739732,
+          "PUT /pagos/{pago_id}": 241.65467625899274,
+          "POST /pagos": 299.58558558558525
+        },
+        "error_apm_pct": 0.0,
+        "k6_pet_s": 375.48461311571316,
+        "error_k6_pct": 0.0,
+        "cpu_api_pct": 89.12963360165102,
+        "cpu_api_max_pct": 101.80329177057357,
+        "cpu_bd_pct": 26.29265670281572,
+        "cpu_bd_max_pct": 33.79130290456432,
+        "cpu_k6_pct": 28.94701764319822,
+        "cpu_collector_pct": 1.4007017872665202,
+        "mem_api_mb": 70.92023689516131,
+        "mem_bd_mb": 488.95236895161287,
+        "conexiones_bd_max": 12.0,
+        "max_connections": 151.0,
+        "pool_en_uso_prom": 4.483870967741935,
+        "pool_en_uso_max": 10.0,
+        "pool_maximo": 10.0,
+        "pool_en_espera_prom": 16.70967741935484,
+        "pool_en_espera_max": 167.0,
+        "tiempo_ms": {
+          "total": 52.74054908374053,
+          "aplicacion": 0.9099302261428255,
+          "espera_pool": 31.820844665390794,
+          "consultas_bd": 14.509931679277392,
+          "publicacion_cola": 5.499842512929519
+        }
+      },
+      "criterios": {
+        "error_pct": 0.0,
+        "cumple_error": true,
+        "cumple_p95": true,
+        "crecimiento_pct": 97.46782316731948,
+        "cumple_crecimiento": true,
+        "cumple_todo": true
+      }
+    }
+  ],
+  "punto_saturacion": {
+    "escalon": 6,
+    "usuarios": 400,
+    "pet_s": 376.4250950063337,
+    "p95_ms": 244.44444444444386,
+    "error_pct": 0.0
+  }
+}

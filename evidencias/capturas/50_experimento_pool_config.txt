@@ -1,0 +1,3 @@
+2026-10-19 17:18:24
+docker compose logs api | Select-String 'Pool de conexiones'
+lab04-api  | 2026-10-19 17:18:07,897 [API] Pool de conexiones a MySQL: mínimo 1, máximo 30

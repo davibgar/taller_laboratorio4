@@ -1,0 +1,34 @@
+[
+  {
+    "traza": "fb36469592215ef4baf09d3290bea15a",
+    "operacion": "POST /pagos",
+    "duracion_ms": 17.384,
+    "archivo": "corrida1_21_jaeger_traza_crear_carga_baja.png",
+    "escalon": 1,
+    "usuarios": 10
+  },
+  {
+    "traza": "58f5e1789664446b11c431d8cb498b6f",
+    "operacion": "GET /pagos/{pago_id}",
+    "duracion_ms": 1.919,
+    "archivo": "corrida1_22_jaeger_traza_consultar_carga_baja.png",
+    "escalon": 1,
+    "usuarios": 10
+  },
+  {
+    "traza": "ecc8ddb3845e3f4e1e1737fd18a93c51",
+    "operacion": "POST /pagos",
+    "duracion_ms": 436.219,
+    "archivo": "corrida1_23_jaeger_traza_crear_saturado.png",
+    "escalon": 6,
+    "usuarios": 400
+  },
+  {
+    "traza": "f4a70dbf08dbe4645e5f8cde81695eb4",
+    "operacion": "GET /pagos",
+    "duracion_ms": 401.998,
+    "archivo": "corrida1_24_jaeger_traza_listar_saturado.png",
+    "escalon": 6,
+    "usuarios": 400
+  }
+]

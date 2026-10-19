@@ -1,0 +1,10 @@
+2026-10-19 17:38:40
+date -r CRITERIOS_SATURACION.md; grep -E "Fecha de definición|^\| [123] \||Escalones|Mezcla" CRITERIOS_SATURACION.md
+Última modificación de CRITERIOS_SATURACION.md: 2026-10-19 11:52:54
+
+**Fecha de definición: 2026-10-19**, antes de ejecutar la primera medición de la prueba de estrés.
+| 1 | Tasa de error | **≤ 1 %** de las peticiones del escalón |
+| 2 | Latencia p95 | **≤ 500 ms** (todas las operaciones juntas) |
+| 3 | Crecimiento del throughput | El throughput (peticiones/s atendidas) del escalón es **al menos 10 % mayor** que el del escalón anterior. El esc
+- **Escalones:** 10, 25, 50, 100, 200 y 400 usuarios concurrentes; 3 minutos cada uno. Antes de ellos,
+- **Mezcla de operaciones:** 50 % consultar un pago, 20 % listar pagos, 20 % crear un pago y 10 % actualizar un pago,

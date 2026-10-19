@@ -1,0 +1,4 @@
+comprobantes/
+__pycache__/
+*.pyc
+resultados_ejecucion*.log

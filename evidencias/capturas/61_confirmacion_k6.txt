@@ -1,0 +1,1335 @@
+2026-10-19 17:08:47
+docker compose run --rm -e CORRIDA=confirmacion -e ESCALONES=200,400 k6
+ Container lab04-mysql  Running
+ Container lab04-jaeger  Running
+ Container lab04-rabbitmq  Running
+ Container lab04-otel-collector  Running
+ Container lab04-api  Running
+ Container lab04-mysql  Waiting
+ Container lab04-rabbitmq  Waiting
+ Container lab04-mysql  Healthy
+ Container lab04-rabbitmq  Healthy
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+     execution: local
+        script: /carga/escenario.js
+        output: Prometheus remote write (http://prometheus:9090/api/v1/write)
+
+     scenarios: (100.00%) 1 scenario, 400 max VUs, 7m30s max duration (incl. graceful stop):
+              * escalones: Up to 400 looping VUs for 7m20s over 6 stages (gracefulRampDown: 10s, gracefulStop: 10s)
+
+
+Run         [ 100% ] setup()
+
+Run         [ 100% ] setup()
+
+Run         [ 100% ] setup()
+
+Run         [ 100% ] setup()
+
+Run         [ 100% ] setup()
+
+Run         [ 100% ] setup()
+
+Run         [ 100% ] setup()
+time="2026-10-19T22:08:58Z" level=info msg="Corrida confirmacion: escalones 200, 400 usuarios de 3m; ids 1..300" source=console
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+time="2026-10-19T22:14:51Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5602\": request timeout"
+
+
+
+
+time="2026-10-19T22:14:54Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/4917\": request timeout"
+time="2026-10-19T22:14:54Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/788\": request timeout"
+time="2026-10-19T22:14:54Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/2933\": request timeout"
+
+
+time="2026-10-19T22:14:56Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/2415\": request timeout"
+time="2026-10-19T22:14:56Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/3135\": request timeout"
+
+
+
+
+
+
+time="2026-10-19T22:15:03Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:03Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+
+time="2026-10-19T22:15:03Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+
+time="2026-10-19T22:15:04Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:04Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/1864\": request timeout"
+
+time="2026-10-19T22:15:06Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/7437\": request timeout"
+time="2026-10-19T22:15:06Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5358\": request timeout"
+
+time="2026-10-19T22:15:06Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:06Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/7896\": request timeout"
+time="2026-10-19T22:15:06Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/2641\": request timeout"
+time="2026-10-19T22:15:07Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8414\": request timeout"
+time="2026-10-19T22:15:07Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:07Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:07Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/2371\": request timeout"
+time="2026-10-19T22:15:07Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/2147\": request timeout"
+
+time="2026-10-19T22:15:07Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/750\": request timeout"
+
+time="2026-10-19T22:15:08Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:08Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:09Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8217\": request timeout"
+
+time="2026-10-19T22:15:09Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:09Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5913\": request timeout"
+time="2026-10-19T22:15:09Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:09Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:09Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5476\": request timeout"
+time="2026-10-19T22:15:09Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/9080\": request timeout"
+time="2026-10-19T22:15:09Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/825\": request timeout"
+time="2026-10-19T22:15:09Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/9796\": request timeout"
+time="2026-10-19T22:15:09Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:09Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:09Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:09Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+
+time="2026-10-19T22:15:11Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:11Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6589\": request timeout"
+time="2026-10-19T22:15:11Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/10583\": request timeout"
+time="2026-10-19T22:15:11Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:11Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:11Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/2235\": request timeout"
+time="2026-10-19T22:15:11Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:11Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5086\": request timeout"
+
+time="2026-10-19T22:15:11Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/9133\": request timeout"
+time="2026-10-19T22:15:11Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5137\": request timeout"
+time="2026-10-19T22:15:11Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/1890\": request timeout"
+time="2026-10-19T22:15:11Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/4836\": request timeout"
+time="2026-10-19T22:15:11Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:11Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:11Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/2637\": request timeout"
+time="2026-10-19T22:15:11Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:12Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8913\": request timeout"
+time="2026-10-19T22:15:12Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/4291\": request timeout"
+
+time="2026-10-19T22:15:12Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:12Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/1199\": request timeout"
+time="2026-10-19T22:15:12Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/7458\": request timeout"
+time="2026-10-19T22:15:12Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:12Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8927\": request timeout"
+time="2026-10-19T22:15:12Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:12Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/1058\": request timeout"
+time="2026-10-19T22:15:12Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11717\": request timeout"
+time="2026-10-19T22:15:13Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+
+time="2026-10-19T22:15:13Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:13Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+
+time="2026-10-19T22:15:14Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5423\": request timeout"
+time="2026-10-19T22:15:15Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:15Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:15Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:15Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:15Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:15Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:15Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:15Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:15Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11893\": request timeout"
+time="2026-10-19T22:15:15Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/10121\": request timeout"
+
+time="2026-10-19T22:15:15Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/3413\": request timeout"
+time="2026-10-19T22:15:15Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:15Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/10305\": request timeout"
+time="2026-10-19T22:15:15Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:15Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8771\": request timeout"
+time="2026-10-19T22:15:15Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/7664\": request timeout"
+time="2026-10-19T22:15:15Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:15Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/11370\": request timeout"
+time="2026-10-19T22:15:15Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6993\": request timeout"
+time="2026-10-19T22:15:15Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5937\": request timeout"
+time="2026-10-19T22:15:15Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:15Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:15Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/12453\": request timeout"
+time="2026-10-19T22:15:16Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:16Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:16Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/10627\": request timeout"
+time="2026-10-19T22:15:16Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5561\": request timeout"
+time="2026-10-19T22:15:16Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/9339\": request timeout"
+time="2026-10-19T22:15:16Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/4847\": request timeout"
+time="2026-10-19T22:15:16Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:16Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/11204\": request timeout"
+
+time="2026-10-19T22:15:16Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:16Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/4176\": request timeout"
+time="2026-10-19T22:15:16Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/7939\": request timeout"
+time="2026-10-19T22:15:16Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:17Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/7774\": request timeout"
+time="2026-10-19T22:15:17Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:17Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/3269\": request timeout"
+
+time="2026-10-19T22:15:17Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:17Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5593\": request timeout"
+time="2026-10-19T22:15:17Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/10385\": request timeout"
+time="2026-10-19T22:15:17Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:17Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:17Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:17Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:17Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:17Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/11564\": request timeout"
+time="2026-10-19T22:15:17Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8928\": request timeout"
+time="2026-10-19T22:15:18Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/4515\": request timeout"
+time="2026-10-19T22:15:18Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6834\": request timeout"
+time="2026-10-19T22:15:18Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:18Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:18Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/258\": request timeout"
+time="2026-10-19T22:15:18Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+
+time="2026-10-19T22:15:18Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:18Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:18Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/9655\": request timeout"
+time="2026-10-19T22:15:18Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11989\": request timeout"
+time="2026-10-19T22:15:19Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/949\": request timeout"
+time="2026-10-19T22:15:19Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:19Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+
+time="2026-10-19T22:15:19Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:19Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:19Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8918\": request timeout"
+time="2026-10-19T22:15:19Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:19Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:19Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/12527\": request timeout"
+time="2026-10-19T22:15:19Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/7328\": request timeout"
+time="2026-10-19T22:15:19Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/3422\": request timeout"
+time="2026-10-19T22:15:20Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/3483\": request timeout"
+time="2026-10-19T22:15:20Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:20Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/9365\": request timeout"
+
+time="2026-10-19T22:15:20Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/7624\": request timeout"
+time="2026-10-19T22:15:20Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:20Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:20Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:20Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/3265\": request timeout"
+time="2026-10-19T22:15:20Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/7100\": request timeout"
+time="2026-10-19T22:15:20Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/424\": request timeout"
+time="2026-10-19T22:15:20Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+
+time="2026-10-19T22:15:21Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5757\": request timeout"
+time="2026-10-19T22:15:21Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/9141\": request timeout"
+time="2026-10-19T22:15:21Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:21Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/2846\": request timeout"
+time="2026-10-19T22:15:21Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:21Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/3279\": request timeout"
+time="2026-10-19T22:15:22Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:22Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:22Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/428\": request timeout"
+time="2026-10-19T22:15:22Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:22Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/9\": request timeout"
+time="2026-10-19T22:15:22Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+
+time="2026-10-19T22:15:22Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:22Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5296\": request timeout"
+time="2026-10-19T22:15:22Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/9566\": request timeout"
+time="2026-10-19T22:15:22Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:22Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/2022\": request timeout"
+time="2026-10-19T22:15:22Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:23Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/4222\": request timeout"
+time="2026-10-19T22:15:23Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:23Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:23Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:23Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11326\": request timeout"
+
+time="2026-10-19T22:15:23Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8629\": request timeout"
+
+time="2026-10-19T22:15:24Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6182\": request timeout"
+time="2026-10-19T22:15:24Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/4677\": request timeout"
+time="2026-10-19T22:15:24Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:24Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:24Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/252\": request timeout"
+time="2026-10-19T22:15:25Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:25Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6435\": request timeout"
+time="2026-10-19T22:15:25Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8795\": request timeout"
+
+time="2026-10-19T22:15:25Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/4649\": request timeout"
+time="2026-10-19T22:15:25Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/2736\": request timeout"
+time="2026-10-19T22:15:25Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11373\": request timeout"
+time="2026-10-19T22:15:25Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:25Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/2515\": request timeout"
+time="2026-10-19T22:15:25Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:26Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:26Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/3879\": request timeout"
+time="2026-10-19T22:15:26Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:26Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:26Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:26Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/10718\": request timeout"
+time="2026-10-19T22:15:26Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+
+time="2026-10-19T22:15:26Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:26Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/10576\": request timeout"
+time="2026-10-19T22:15:26Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/2312\": request timeout"
+time="2026-10-19T22:15:26Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/2931\": request timeout"
+time="2026-10-19T22:15:26Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:26Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/4357\": request timeout"
+time="2026-10-19T22:15:26Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:26Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8130\": request timeout"
+time="2026-10-19T22:15:27Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8060\": request timeout"
+time="2026-10-19T22:15:27Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/9646\": request timeout"
+time="2026-10-19T22:15:27Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/12367\": request timeout"
+time="2026-10-19T22:15:27Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8730\": request timeout"
+time="2026-10-19T22:15:27Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+
+time="2026-10-19T22:15:27Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11882\": request timeout"
+
+time="2026-10-19T22:15:28Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:28Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:28Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:28Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/10854\": request timeout"
+time="2026-10-19T22:15:29Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/1140\": request timeout"
+time="2026-10-19T22:15:29Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6702\": request timeout"
+time="2026-10-19T22:15:29Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6159\": request timeout"
+time="2026-10-19T22:15:29Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11532\": request timeout"
+time="2026-10-19T22:15:29Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:29Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/7321\": request timeout"
+
+time="2026-10-19T22:15:29Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/2143\": request timeout"
+time="2026-10-19T22:15:29Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11425\": request timeout"
+time="2026-10-19T22:15:29Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/257\": request timeout"
+time="2026-10-19T22:15:29Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/912\": request timeout"
+time="2026-10-19T22:15:29Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5314\": request timeout"
+time="2026-10-19T22:15:30Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6585\": request timeout"
+time="2026-10-19T22:15:30Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/7091\": request timeout"
+time="2026-10-19T22:15:30Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+
+time="2026-10-19T22:15:30Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:30Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:30Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/10101\": request timeout"
+time="2026-10-19T22:15:30Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:30Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:30Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:30Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/7234\": request timeout"
+time="2026-10-19T22:15:30Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/1454\": request timeout"
+time="2026-10-19T22:15:31Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:31Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11301\": request timeout"
+time="2026-10-19T22:15:31Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+
+time="2026-10-19T22:15:31Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/3414\": request timeout"
+time="2026-10-19T22:15:31Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/454\": request timeout"
+time="2026-10-19T22:15:31Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8098\": request timeout"
+time="2026-10-19T22:15:31Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:31Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/1378\": request timeout"
+time="2026-10-19T22:15:31Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/848\": request timeout"
+time="2026-10-19T22:15:31Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5187\": request timeout"
+time="2026-10-19T22:15:31Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/1295\": request timeout"
+time="2026-10-19T22:15:31Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:31Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:31Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/6621\": request timeout"
+time="2026-10-19T22:15:31Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:31Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/7278\": request timeout"
+time="2026-10-19T22:15:31Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5707\": request timeout"
+time="2026-10-19T22:15:31Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/318\": request timeout"
+time="2026-10-19T22:15:31Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/12183\": request timeout"
+time="2026-10-19T22:15:31Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:31Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/1260\": request timeout"
+time="2026-10-19T22:15:31Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11814\": request timeout"
+time="2026-10-19T22:15:31Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/2919\": request timeout"
+time="2026-10-19T22:15:31Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/785\": request timeout"
+time="2026-10-19T22:15:32Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/12448\": request timeout"
+time="2026-10-19T22:15:32Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+
+time="2026-10-19T22:15:32Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/10778\": request timeout"
+time="2026-10-19T22:15:32Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/12274\": request timeout"
+time="2026-10-19T22:15:32Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/10057\": request timeout"
+time="2026-10-19T22:15:32Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/10814\": request timeout"
+time="2026-10-19T22:15:32Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/4044\": request timeout"
+time="2026-10-19T22:15:32Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:32Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:32Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/1631\": request timeout"
+time="2026-10-19T22:15:32Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/10623\": request timeout"
+time="2026-10-19T22:15:32Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:32Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11382\": request timeout"
+time="2026-10-19T22:15:32Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:32Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/7360\": request timeout"
+time="2026-10-19T22:15:32Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/3011\": request timeout"
+time="2026-10-19T22:15:32Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/9186\": request timeout"
+time="2026-10-19T22:15:33Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/10447\": request timeout"
+time="2026-10-19T22:15:33Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:33Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:33Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/6416\": request timeout"
+
+time="2026-10-19T22:15:33Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/2824\": request timeout"
+time="2026-10-19T22:15:33Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/10759\": request timeout"
+time="2026-10-19T22:15:33Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/1296\": request timeout"
+time="2026-10-19T22:15:33Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6421\": request timeout"
+time="2026-10-19T22:15:33Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/10960\": request timeout"
+time="2026-10-19T22:15:33Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/192\": request timeout"
+time="2026-10-19T22:15:33Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/1711\": request timeout"
+time="2026-10-19T22:15:33Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:33Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/105\": request timeout"
+time="2026-10-19T22:15:33Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:33Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/7605\": request timeout"
+time="2026-10-19T22:15:33Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:33Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/3726\": request timeout"
+time="2026-10-19T22:15:33Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:33Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/4118\": request timeout"
+time="2026-10-19T22:15:33Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/2825\": request timeout"
+time="2026-10-19T22:15:33Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/1407\": request timeout"
+time="2026-10-19T22:15:34Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/1972\": request timeout"
+
+
+time="2026-10-19T22:15:35Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:35Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/9482\": request timeout"
+time="2026-10-19T22:15:35Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5794\": request timeout"
+time="2026-10-19T22:15:35Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/1345\": request timeout"
+time="2026-10-19T22:15:35Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:35Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8019\": request timeout"
+time="2026-10-19T22:15:36Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6816\": request timeout"
+
+time="2026-10-19T22:15:36Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/8654\": request timeout"
+time="2026-10-19T22:15:36Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/12416\": request timeout"
+time="2026-10-19T22:15:36Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/7416\": request timeout"
+time="2026-10-19T22:15:36Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11678\": request timeout"
+time="2026-10-19T22:15:36Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:36Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/6960\": request timeout"
+time="2026-10-19T22:15:36Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:36Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/7335\": request timeout"
+time="2026-10-19T22:15:36Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/3165\": request timeout"
+time="2026-10-19T22:15:36Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/1774\": request timeout"
+time="2026-10-19T22:15:37Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/10390\": request timeout"
+time="2026-10-19T22:15:37Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:37Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/703\": request timeout"
+time="2026-10-19T22:15:37Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+
+time="2026-10-19T22:15:37Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/9847\": request timeout"
+time="2026-10-19T22:15:37Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:37Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/12199\": request timeout"
+time="2026-10-19T22:15:37Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/566\": request timeout"
+time="2026-10-19T22:15:37Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:37Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:37Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:37Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/2862\": request timeout"
+time="2026-10-19T22:15:37Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/237\": request timeout"
+time="2026-10-19T22:15:37Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/3154\": request timeout"
+time="2026-10-19T22:15:37Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:37Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/2383\": request timeout"
+time="2026-10-19T22:15:37Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/9323\": request timeout"
+time="2026-10-19T22:15:38Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6087\": request timeout"
+time="2026-10-19T22:15:38Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:38Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/3903\": request timeout"
+time="2026-10-19T22:15:38Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+
+time="2026-10-19T22:15:38Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/2172\": request timeout"
+time="2026-10-19T22:15:38Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:38Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/9559\": request timeout"
+time="2026-10-19T22:15:38Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/5094\": request timeout"
+time="2026-10-19T22:15:38Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:38Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/10121\": request timeout"
+time="2026-10-19T22:15:38Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8945\": request timeout"
+time="2026-10-19T22:15:38Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/4369\": request timeout"
+time="2026-10-19T22:15:38Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/195\": request timeout"
+time="2026-10-19T22:15:38Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/4889\": request timeout"
+time="2026-10-19T22:15:38Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:38Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8655\": request timeout"
+time="2026-10-19T22:15:38Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:39Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+
+time="2026-10-19T22:15:39Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5567\": request timeout"
+time="2026-10-19T22:15:39Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:39Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/3640\": request timeout"
+time="2026-10-19T22:15:39Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5727\": request timeout"
+time="2026-10-19T22:15:39Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/4211\": request timeout"
+time="2026-10-19T22:15:39Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/3984\": request timeout"
+time="2026-10-19T22:15:40Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+
+time="2026-10-19T22:15:40Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:40Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/2788\": request timeout"
+time="2026-10-19T22:15:40Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/151\": request timeout"
+time="2026-10-19T22:15:40Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/2815\": request timeout"
+time="2026-10-19T22:15:40Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:40Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:40Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11742\": request timeout"
+time="2026-10-19T22:15:40Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/7966\": request timeout"
+time="2026-10-19T22:15:40Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:40Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:41Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/10343\": request timeout"
+time="2026-10-19T22:15:41Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/4671\": request timeout"
+time="2026-10-19T22:15:41Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/1640\": request timeout"
+
+time="2026-10-19T22:15:41Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/12502\": request timeout"
+time="2026-10-19T22:15:41Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/3503\": request timeout"
+time="2026-10-19T22:15:41Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:41Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/1799\": request timeout"
+time="2026-10-19T22:15:41Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/3301\": request timeout"
+time="2026-10-19T22:15:41Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/92\": request timeout"
+time="2026-10-19T22:15:41Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/4574\": request timeout"
+time="2026-10-19T22:15:41Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:41Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5538\": request timeout"
+time="2026-10-19T22:15:41Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:41Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11849\": request timeout"
+time="2026-10-19T22:15:41Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:41Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/4978\": request timeout"
+time="2026-10-19T22:15:41Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:42Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:42Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:42Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+
+time="2026-10-19T22:15:42Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:42Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:42Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:42Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:42Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:42Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5214\": request timeout"
+time="2026-10-19T22:15:42Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/3971\": request timeout"
+time="2026-10-19T22:15:42Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:43Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11307\": request timeout"
+
+time="2026-10-19T22:15:43Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:44Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6699\": request timeout"
+time="2026-10-19T22:15:44Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:44Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:44Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/7155\": request timeout"
+time="2026-10-19T22:15:44Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:44Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:44Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:44Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6696\": request timeout"
+
+time="2026-10-19T22:15:44Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/5596\": request timeout"
+time="2026-10-19T22:15:44Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/2710\": request timeout"
+time="2026-10-19T22:15:44Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6184\": request timeout"
+time="2026-10-19T22:15:44Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:44Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/9251\": request timeout"
+time="2026-10-19T22:15:44Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/10509\": request timeout"
+time="2026-10-19T22:15:44Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:44Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/9802\": request timeout"
+time="2026-10-19T22:15:44Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/1471\": request timeout"
+time="2026-10-19T22:15:45Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/10272\": request timeout"
+
+time="2026-10-19T22:15:45Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/12124\": request timeout"
+time="2026-10-19T22:15:45Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/4104\": request timeout"
+time="2026-10-19T22:15:45Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/11965\": request timeout"
+time="2026-10-19T22:15:45Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:45Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6783\": request timeout"
+time="2026-10-19T22:15:45Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/6331\": request timeout"
+time="2026-10-19T22:15:45Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/3160\": request timeout"
+time="2026-10-19T22:15:45Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/12249\": request timeout"
+time="2026-10-19T22:15:45Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/4081\": request timeout"
+time="2026-10-19T22:15:46Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:46Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/10839\": request timeout"
+time="2026-10-19T22:15:46Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/2956\": request timeout"
+time="2026-10-19T22:15:46Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:46Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+
+time="2026-10-19T22:15:46Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6329\": request timeout"
+time="2026-10-19T22:15:46Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/3121\": request timeout"
+time="2026-10-19T22:15:46Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:46Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/12043\": request timeout"
+time="2026-10-19T22:15:46Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:47Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/429\": request timeout"
+time="2026-10-19T22:15:47Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:47Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:47Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:47Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+
+time="2026-10-19T22:15:47Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/7139\": request timeout"
+time="2026-10-19T22:15:47Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:47Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:47Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/9235\": request timeout"
+time="2026-10-19T22:15:47Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/3585\": request timeout"
+time="2026-10-19T22:15:47Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:47Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/7680\": request timeout"
+time="2026-10-19T22:15:47Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:48Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/9230\": request timeout"
+time="2026-10-19T22:15:48Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5750\": request timeout"
+time="2026-10-19T22:15:48Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/2231\": request timeout"
+time="2026-10-19T22:15:48Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:48Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5823\": request timeout"
+time="2026-10-19T22:15:48Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:48Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/3678\": request timeout"
+time="2026-10-19T22:15:48Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/9978\": request timeout"
+time="2026-10-19T22:15:48Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/9969\": request timeout"
+time="2026-10-19T22:15:48Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:48Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:48Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11096\": request timeout"
+time="2026-10-19T22:15:48Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/124\": request timeout"
+
+time="2026-10-19T22:15:48Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8607\": request timeout"
+time="2026-10-19T22:15:48Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/7883\": request timeout"
+time="2026-10-19T22:15:48Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/5425\": request timeout"
+time="2026-10-19T22:15:48Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:48Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/2432\": request timeout"
+time="2026-10-19T22:15:48Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:48Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8390\": request timeout"
+time="2026-10-19T22:15:49Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+
+time="2026-10-19T22:15:49Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:49Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:49Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:49Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/5540\": request timeout"
+time="2026-10-19T22:15:49Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:49Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:49Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/4418\": request timeout"
+time="2026-10-19T22:15:49Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/10081\": request timeout"
+time="2026-10-19T22:15:49Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11317\": request timeout"
+time="2026-10-19T22:15:49Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/5328\": request timeout"
+time="2026-10-19T22:15:50Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:50Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8789\": request timeout"
+
+time="2026-10-19T22:15:50Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:50Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/7460\": request timeout"
+time="2026-10-19T22:15:50Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:50Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5642\": request timeout"
+time="2026-10-19T22:15:50Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:50Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5692\": request timeout"
+time="2026-10-19T22:15:50Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/5499\": request timeout"
+time="2026-10-19T22:15:50Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/6761\": request timeout"
+time="2026-10-19T22:15:50Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:50Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/4287\": request timeout"
+time="2026-10-19T22:15:51Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8796\": request timeout"
+time="2026-10-19T22:15:51Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/10263\": request timeout"
+time="2026-10-19T22:15:51Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:51Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+
+time="2026-10-19T22:15:51Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/7254\": request timeout"
+time="2026-10-19T22:15:51Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/301\": request timeout"
+time="2026-10-19T22:15:51Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:51Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:52Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/4427\": request timeout"
+
+time="2026-10-19T22:15:52Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/3672\": request timeout"
+time="2026-10-19T22:15:52Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:52Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:52Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:52Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8029\": request timeout"
+time="2026-10-19T22:15:52Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11026\": request timeout"
+time="2026-10-19T22:15:52Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:52Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:52Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:52Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:52Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11639\": request timeout"
+
+time="2026-10-19T22:15:53Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/91\": request timeout"
+time="2026-10-19T22:15:53Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/10589\": request timeout"
+time="2026-10-19T22:15:53Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/12880\": request timeout"
+time="2026-10-19T22:15:53Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:53Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5228\": request timeout"
+time="2026-10-19T22:15:53Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/5961\": request timeout"
+time="2026-10-19T22:15:53Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5839\": request timeout"
+time="2026-10-19T22:15:53Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:53Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/6721\": request timeout"
+time="2026-10-19T22:15:53Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:53Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/8494\": request timeout"
+time="2026-10-19T22:15:54Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/9633\": request timeout"
+time="2026-10-19T22:15:54Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/7852\": request timeout"
+time="2026-10-19T22:15:54Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:54Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/7968\": request timeout"
+
+time="2026-10-19T22:15:54Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/10290\": request timeout"
+time="2026-10-19T22:15:54Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:54Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/4915\": request timeout"
+time="2026-10-19T22:15:54Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/1352\": request timeout"
+time="2026-10-19T22:15:55Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:55Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/2955\": request timeout"
+
+time="2026-10-19T22:15:55Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/9497\": request timeout"
+time="2026-10-19T22:15:55Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/512\": request timeout"
+time="2026-10-19T22:15:55Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:55Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:55Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11547\": request timeout"
+time="2026-10-19T22:15:55Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/7998\": request timeout"
+time="2026-10-19T22:15:55Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/2587\": request timeout"
+time="2026-10-19T22:15:56Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/2767\": request timeout"
+time="2026-10-19T22:15:56Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11521\": request timeout"
+time="2026-10-19T22:15:56Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:56Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8977\": request timeout"
+time="2026-10-19T22:15:56Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:56Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+
+time="2026-10-19T22:15:56Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:56Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/7136\": request timeout"
+time="2026-10-19T22:15:56Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6128\": request timeout"
+time="2026-10-19T22:15:57Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/10688\": request timeout"
+
+time="2026-10-19T22:15:57Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/9447\": request timeout"
+time="2026-10-19T22:15:57Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/267\": request timeout"
+time="2026-10-19T22:15:57Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/12212\": request timeout"
+time="2026-10-19T22:15:58Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/5528\": request timeout"
+
+time="2026-10-19T22:15:58Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8655\": request timeout"
+time="2026-10-19T22:15:58Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8367\": request timeout"
+time="2026-10-19T22:15:58Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:58Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/10466\": request timeout"
+time="2026-10-19T22:15:58Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/5835\": request timeout"
+time="2026-10-19T22:15:58Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/2475\": request timeout"
+time="2026-10-19T22:15:58Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/4863\": request timeout"
+time="2026-10-19T22:15:59Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:59Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/7027\": request timeout"
+time="2026-10-19T22:15:59Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/4771\": request timeout"
+time="2026-10-19T22:15:59Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/9000\": request timeout"
+time="2026-10-19T22:15:59Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/3744\": request timeout"
+time="2026-10-19T22:15:59Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:59Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/9987\": request timeout"
+time="2026-10-19T22:15:59Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+
+time="2026-10-19T22:15:59Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/2468\": request timeout"
+time="2026-10-19T22:15:59Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/1868\": request timeout"
+time="2026-10-19T22:15:59Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/7823\": request timeout"
+time="2026-10-19T22:15:59Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6246\": request timeout"
+time="2026-10-19T22:15:59Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5430\": request timeout"
+time="2026-10-19T22:15:59Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/7558\": request timeout"
+time="2026-10-19T22:15:59Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:59Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11500\": request timeout"
+time="2026-10-19T22:15:59Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/6828\": request timeout"
+time="2026-10-19T22:15:59Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/4601\": request timeout"
+time="2026-10-19T22:15:59Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/7791\": request timeout"
+time="2026-10-19T22:15:59Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:15:59Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5986\": request timeout"
+
+time="2026-10-19T22:16:00Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11111\": request timeout"
+time="2026-10-19T22:16:00Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11392\": request timeout"
+
+time="2026-10-19T22:16:01Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:01Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/3490\": request timeout"
+time="2026-10-19T22:16:01Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/11218\": request timeout"
+time="2026-10-19T22:16:01Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/719\": request timeout"
+time="2026-10-19T22:16:01Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/896\": request timeout"
+time="2026-10-19T22:16:01Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:01Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/345\": request timeout"
+time="2026-10-19T22:16:01Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/9547\": request timeout"
+time="2026-10-19T22:16:01Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6015\": request timeout"
+time="2026-10-19T22:16:01Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/755\": request timeout"
+time="2026-10-19T22:16:02Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/441\": request timeout"
+
+time="2026-10-19T22:16:02Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/10599\": request timeout"
+time="2026-10-19T22:16:02Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:03Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/4634\": request timeout"
+time="2026-10-19T22:16:03Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:03Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/10333\": request timeout"
+time="2026-10-19T22:16:03Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11357\": request timeout"
+time="2026-10-19T22:16:03Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/2400\": request timeout"
+time="2026-10-19T22:16:03Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+
+time="2026-10-19T22:16:03Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6197\": request timeout"
+time="2026-10-19T22:16:03Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:03Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:03Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:03Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:03Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:03Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/197\": request timeout"
+time="2026-10-19T22:16:03Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/1635\": request timeout"
+time="2026-10-19T22:16:03Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/10307\": request timeout"
+time="2026-10-19T22:16:03Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/2601\": request timeout"
+time="2026-10-19T22:16:03Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:04Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+
+time="2026-10-19T22:16:04Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:04Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:04Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/3420\": request timeout"
+time="2026-10-19T22:16:04Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:04Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:04Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/12686\": request timeout"
+time="2026-10-19T22:16:04Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:04Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:05Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6704\": request timeout"
+
+time="2026-10-19T22:16:05Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:05Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/1443\": request timeout"
+time="2026-10-19T22:16:05Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6368\": request timeout"
+time="2026-10-19T22:16:05Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6152\": request timeout"
+time="2026-10-19T22:16:05Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:05Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/3758\": request timeout"
+time="2026-10-19T22:16:05Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/1098\": request timeout"
+time="2026-10-19T22:16:05Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+
+time="2026-10-19T22:16:06Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/416\": request timeout"
+time="2026-10-19T22:16:06Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11008\": request timeout"
+time="2026-10-19T22:16:06Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:06Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/10787\": request timeout"
+time="2026-10-19T22:16:06Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5498\": request timeout"
+time="2026-10-19T22:16:06Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/7901\": request timeout"
+time="2026-10-19T22:16:06Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:06Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/9114\": request timeout"
+time="2026-10-19T22:16:06Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8744\": request timeout"
+time="2026-10-19T22:16:07Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/3858\": request timeout"
+time="2026-10-19T22:16:07Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:07Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:07Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:07Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:07Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11943\": request timeout"
+time="2026-10-19T22:16:07Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6525\": request timeout"
+
+time="2026-10-19T22:16:07Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5684\": request timeout"
+time="2026-10-19T22:16:07Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:07Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/10981\": request timeout"
+time="2026-10-19T22:16:07Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:08Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:08Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11098\": request timeout"
+time="2026-10-19T22:16:08Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:08Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+
+time="2026-10-19T22:16:08Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:08Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5108\": request timeout"
+time="2026-10-19T22:16:08Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:08Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:08Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:08Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/1702\": request timeout"
+time="2026-10-19T22:16:08Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/2830\": request timeout"
+time="2026-10-19T22:16:08Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/10999\": request timeout"
+time="2026-10-19T22:16:08Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/4068\": request timeout"
+time="2026-10-19T22:16:08Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/1324\": request timeout"
+time="2026-10-19T22:16:08Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8381\": request timeout"
+time="2026-10-19T22:16:09Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6291\": request timeout"
+time="2026-10-19T22:16:09Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:09Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:09Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/3317\": request timeout"
+time="2026-10-19T22:16:09Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:09Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:09Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5203\": request timeout"
+
+time="2026-10-19T22:16:09Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:09Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/895\": request timeout"
+time="2026-10-19T22:16:09Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:09Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:09Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8491\": request timeout"
+time="2026-10-19T22:16:09Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:09Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:10Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/3343\": request timeout"
+time="2026-10-19T22:16:10Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:10Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:10Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/6994\": request timeout"
+
+time="2026-10-19T22:16:10Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/2545\": request timeout"
+time="2026-10-19T22:16:10Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/7150\": request timeout"
+time="2026-10-19T22:16:10Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6006\": request timeout"
+time="2026-10-19T22:16:10Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6473\": request timeout"
+time="2026-10-19T22:16:10Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/1902\": request timeout"
+time="2026-10-19T22:16:10Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:10Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:10Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/343\": request timeout"
+time="2026-10-19T22:16:10Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/706\": request timeout"
+time="2026-10-19T22:16:11Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/694\": request timeout"
+
+time="2026-10-19T22:16:11Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:11Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/12300\": request timeout"
+time="2026-10-19T22:16:11Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/2550\": request timeout"
+time="2026-10-19T22:16:11Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:11Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:11Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:12Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5432\": request timeout"
+time="2026-10-19T22:16:12Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:12Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:12Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:12Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8877\": request timeout"
+
+time="2026-10-19T22:16:12Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:12Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/9454\": request timeout"
+time="2026-10-19T22:16:13Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8344\": request timeout"
+time="2026-10-19T22:16:13Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6578\": request timeout"
+time="2026-10-19T22:16:13Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:13Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8960\": request timeout"
+time="2026-10-19T22:16:13Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/3111\": request timeout"
+
+time="2026-10-19T22:16:13Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6144\": request timeout"
+time="2026-10-19T22:16:13Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6609\": request timeout"
+time="2026-10-19T22:16:13Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/1186\": request timeout"
+time="2026-10-19T22:16:13Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/9465\": request timeout"
+time="2026-10-19T22:16:13Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/1196\": request timeout"
+time="2026-10-19T22:16:13Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/8126\": request timeout"
+time="2026-10-19T22:16:14Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:14Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8650\": request timeout"
+
+time="2026-10-19T22:16:14Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/10675\": request timeout"
+time="2026-10-19T22:16:14Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/10229\": request timeout"
+time="2026-10-19T22:16:14Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:14Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/11495\": request timeout"
+time="2026-10-19T22:16:14Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:14Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/13014\": request timeout"
+time="2026-10-19T22:16:14Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/4603\": request timeout"
+time="2026-10-19T22:16:14Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/9333\": request timeout"
+time="2026-10-19T22:16:14Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:14Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5107\": request timeout"
+time="2026-10-19T22:16:15Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/2042\": request timeout"
+time="2026-10-19T22:16:15Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6918\": request timeout"
+time="2026-10-19T22:16:15Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/7074\": request timeout"
+
+time="2026-10-19T22:16:15Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/2841\": request timeout"
+time="2026-10-19T22:16:15Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/1386\": request timeout"
+time="2026-10-19T22:16:16Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/12717\": request timeout"
+time="2026-10-19T22:16:16Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/11027\": request timeout"
+time="2026-10-19T22:16:16Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/4965\": request timeout"
+time="2026-10-19T22:16:16Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:16Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/6948\": request timeout"
+
+time="2026-10-19T22:16:16Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/9144\": request timeout"
+time="2026-10-19T22:16:16Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/9159\": request timeout"
+time="2026-10-19T22:16:16Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:16Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/4780\": request timeout"
+
+time="2026-10-19T22:16:17Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5559\": request timeout"
+time="2026-10-19T22:16:17Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:17Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:17Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:17Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6905\": request timeout"
+time="2026-10-19T22:16:17Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:17Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/11321\": request timeout"
+time="2026-10-19T22:16:17Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6797\": request timeout"
+time="2026-10-19T22:16:17Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/4886\": request timeout"
+time="2026-10-19T22:16:17Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:17Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/3463\": request timeout"
+time="2026-10-19T22:16:17Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:17Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11303\": request timeout"
+time="2026-10-19T22:16:17Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11142\": request timeout"
+time="2026-10-19T22:16:17Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/12903\": request timeout"
+time="2026-10-19T22:16:17Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:17Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/13037\": request timeout"
+time="2026-10-19T22:16:17Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/286\": request timeout"
+time="2026-10-19T22:16:18Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:18Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:18Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5071\": request timeout"
+time="2026-10-19T22:16:18Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/1096\": request timeout"
+time="2026-10-19T22:16:18Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/12853\": request timeout"
+
+escalones ↓ [ 100% ] 393/400 VUs  7m20s
+time="2026-10-19T22:16:18Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:18Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:19Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/10063\": request timeout"
+
+escalones ↓ [ 100% ] 393/400 VUs  7m20s
+time="2026-10-19T22:16:19Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:19Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:19Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6460\": request timeout"
+time="2026-10-19T22:16:19Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/640\": request timeout"
+time="2026-10-19T22:16:19Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:19Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8247\": request timeout"
+time="2026-10-19T22:16:19Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/3105\": request timeout"
+time="2026-10-19T22:16:19Z" level=warning msg="Request Failed" error="Put \"http://api:8000/pagos/6503\": request timeout"
+time="2026-10-19T22:16:19Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8098\": request timeout"
+time="2026-10-19T22:16:20Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11472\": request timeout"
+
+escalones ↓ [ 100% ] 393/400 VUs  7m20s
+time="2026-10-19T22:16:20Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/6403\": request timeout"
+time="2026-10-19T22:16:20Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11314\": request timeout"
+time="2026-10-19T22:16:20Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:20Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5056\": request timeout"
+time="2026-10-19T22:16:20Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/4575\": request timeout"
+time="2026-10-19T22:16:20Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/10495\": request timeout"
+time="2026-10-19T22:16:20Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11278\": request timeout"
+time="2026-10-19T22:16:20Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/9540\": request timeout"
+time="2026-10-19T22:16:20Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:20Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/9226\": request timeout"
+time="2026-10-19T22:16:20Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8647\": request timeout"
+time="2026-10-19T22:16:20Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/808\": request timeout"
+time="2026-10-19T22:16:20Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:20Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5004\": request timeout"
+time="2026-10-19T22:16:20Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/9754\": request timeout"
+time="2026-10-19T22:16:21Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/8286\": request timeout"
+time="2026-10-19T22:16:21Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/1324\": request timeout"
+time="2026-10-19T22:16:21Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/1576\": request timeout"
+time="2026-10-19T22:16:21Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:21Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/5038\": request timeout"
+time="2026-10-19T22:16:21Z" level=warning msg="Request Failed" error="Post \"http://api:8000/pagos\": request timeout"
+time="2026-10-19T22:16:21Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/11889\": request timeout"
+
+escalones ↓ [ 100% ] 393/400 VUs  7m20s
+time="2026-10-19T22:16:21Z" level=warning msg="Request Failed" error="Get \"http://api:8000/pagos/7857\": request timeout"
+
+escalones ↓ [ 100% ] 393/400 VUs  7m20s
+
+escalones ↓ [ 100% ] 393/400 VUs  7m20s
+
+escalones ✓ [ 100% ] 000/400 VUs  7m20s
+
+escalones ✓ [ 100% ] 000/400 VUs  7m20s
+
+escalones ✓ [ 100% ] 000/400 VUs  7m20s
+
+escalones ✓ [ 100% ] 000/400 VUs  7m20s
+
+escalones ✓ [ 100% ] 000/400 VUs  7m20s
+
+escalones ✓ [ 100% ] 000/400 VUs  7m20s
+
+escalones ✓ [ 100% ] 000/400 VUs  7m20s
+
+     ✗ listar: 200
+      ↳  99% — ✓ 13343 / ✗ 134
+     ✗ consultar: 200
+      ↳  98% — ✓ 33063 / ✗ 396
+     ✗ crear: 201
+      ↳  98% — ✓ 13153 / ✗ 180
+     ✗ actualizar: 200
+      ↳  98% — ✓ 6482 / ✗ 89
+
+     checks.........................: 98.80% 66041 out of 66840
+     data_received..................: 256 MB 564 kB/s
+     data_sent......................: 9.7 MB 21 kB/s
+     http_req_blocked...............: avg=51.17µs  min=1.39µs   med=7.07µs   p(90)=10.03µs  p(95)=13.15µs p(99)=427.28µs max=146.02ms
+     http_req_connecting............: avg=28.73µs  min=0s       med=0s       p(90)=0s       p(95)=0s      p(99)=302.8µs  max=132.14ms
+     http_req_duration..............: avg=694.68ms min=1.29ms   med=54.92ms  p(90)=1.77s    p(95)=5.45s   p(99)=9.98s    max=10.24s  
+       { expected_response:true }...: avg=582.59ms min=1.29ms   med=53.15ms  p(90)=1.52s    p(95)=4.15s   p(99)=7.11s    max=9.96s   
+     http_req_failed................: 1.19%  799 out of 67141
+     http_req_receiving.............: avg=294.89µs min=0s       med=116.83µs p(90)=265.34µs p(95)=430.5µs p(99)=5.44ms   max=180.61ms
+     http_req_sending...............: avg=60.69µs  min=4.21µs   med=31.86µs  p(90)=78.28µs  p(95)=94.37µs p(99)=178.76µs max=88.13ms 
+     http_req_tls_handshaking.......: avg=0s       min=0s       med=0s       p(90)=0s       p(95)=0s      p(99)=0s       max=0s      
+     http_req_waiting...............: avg=694.33ms min=1.22ms   med=54.49ms  p(90)=1.77s    p(95)=5.45s   p(99)=9.98s    max=10.24s  
+     http_reqs......................: 67141  147.915347/s
+     iteration_duration.............: avg=1.69s    min=503.36ms med=1.2s     p(90)=2.81s    p(95)=6.46s   p(99)=10.7s    max=11.51s  
+     iterations.....................: 66840  147.252228/s
+     vus............................: 0      min=0              max=400
+     vus_max........................: 400    min=400            max=400
+
+
+escalones ✓ [ 100% ] 000/400 VUs  7m20s

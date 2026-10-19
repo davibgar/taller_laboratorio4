@@ -1,0 +1,25 @@
+2026-10-19 15:45:15
+docker compose up -d --build
+   ... (construcción de las imágenes api, consumer y monitor-contenedores) ...
+ lab04-pagos-consumer  Built
+ lab04-monitor-contenedores  Built
+ lab04-pagos-api  Built
+ Network lab04-pagos_default  Created
+ Volume "lab04-pagos_mysql_data"  Created
+ Volume "lab04-pagos_rabbitmq_data"  Created
+ Volume "lab04-pagos_prometheus_data"  Created
+ Container lab04-monitor-contenedores  Started
+ Container lab04-rabbitmq  Started
+ Container lab04-jaeger  Started
+ Container lab04-mysql  Started
+ Container lab04-prometheus  Started
+ Container lab04-otel-collector  Started
+ Container lab04-grafana  Started
+ Container lab04-rabbitmq  Healthy
+ Container lab04-rabbitmq  Healthy
+ Container lab04-mysql  Healthy
+ Container lab04-mysql  Healthy
+ Container lab04-mysql  Healthy
+ Container lab04-api  Started
+ Container lab04-mysqld-exporter  Started
+ Container lab04-consumer  Started

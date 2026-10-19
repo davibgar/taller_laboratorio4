@@ -1,0 +1,5 @@
+2026-10-19 17:05:04
+docker compose exec rabbitmq rabbitmqctl list_queues name messages
+name	messages
+pagos.fallidos	0
+pagos.registrados	101049
